@@ -11,16 +11,15 @@ import {ResearchTask,type ResearchSource} from './Companion';
 import {PaperExport} from './PaperExport';
 import {AnnotationCard} from './AnnotationCard';
 import {focusZoom} from './ReaderFocus';
-import { ArrowLeft, ArrowRight, ArrowLeftRight, Bookmark, Type, Highlighter, Link2, List, Minus, MoreHorizontal, PanelRight, Plus, Settings2, ScanLine, Underline } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowLeftRight, Bookmark, Type, Highlighter, Link2, List, Minus, MoreHorizontal, PanelRight, Plus, ScanLine, Underline } from 'lucide-react';
 import { useEffect,useLayoutEffect,useMemo,useRef,useState,type CSSProperties,type RefObject } from 'react';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { api,message,type Mark,type Paper,type Rect,type Selection,type Word } from './api';
 import { captureExcerpt, selectedTerm } from './WordCapture';
-import { paragraphFlow } from './layout';
 import { cropOriginal,PageSurface,useVisiblePages } from './ContinuousPDF';
-import { loadPDF,pageImage,pdfGlyphs } from './pdf';
+import { loadPDF } from './pdf';
 import {recordPageCount} from './PaperPreview';
-import { isParagraph,kinds,readingRegions,regionName,visualKinds,type Group,type Kind,type Located,type ReadingPlan } from './ReadingRegions';
+import { isParagraph,kinds,regionName,visualKinds,type Group,type Kind,type Located,type ReadingPlan } from './ReadingRegions';
 import { ReadingColorSettings,readingColorStyle,useReadingColors } from './ReadingColors';
 import { TranslationArticle } from './TranslationArticle';
 import { translateStream } from './TranslationStream';
@@ -1012,7 +1011,7 @@ export function Reader({paper,start,backLabel,leave,update,addWord,report,review
       <button className="primary" disabled={picked.length<2||reviewActionsBusy}
         onClick={()=>void edit({action:'join',first:picked[0].region.id,selected:picked.map(item=>item.region.id)})}>连接已选区块</button>
     </RegionPopover>}
-    {selection&&!markTool&&!drawTool&&<SelectionPalette task={()=>{setResearchSource({paperId:paper.id,page:selection.page,markId:'',markRevision:0,quote:selection.quote.text,rects:selection.quote.rects});setSelection(null)}} word={wordTerm?{save:()=>void captureSelectedWord(),busy:savingWord}:undefined} point={selection.point} color={color} choose={(kind,tone)=>{setColor(tone);void toggleMark(kind,selection,tone)}} annotate={()=>{const rect=selection.quote.rects[0];openAnnotation({kind:"note",page:selection.page,color,quote:selection.quote.text,rects:[{x:Math.min(.97,rect.x),y:Math.min(.97,rect.y),w:.025,h:.025}],comment:"",size:14,width:2},selection.point);setSelection(null);window.getSelection()?.removeAllRanges()}}/>}
+    {selection&&!markTool&&!drawTool&&<SelectionPalette task={()=>{setResearchSource({paperId:paper.id,page:selection.page,markId:'',markRevision:0,quote:selection.quote.text,rects:selection.quote.rects});setSelection(null)}} word={wordTerm?{save:()=>void captureSelectedWord(),busy:savingWord}:undefined} point={selection.point} choose={(kind,tone)=>{setColor(tone);void toggleMark(kind,selection,tone)}} annotate={()=>{const rect=selection.quote.rects[0];openAnnotation({kind:"note",page:selection.page,color,quote:selection.quote.text,rects:[{x:Math.min(.97,rect.x),y:Math.min(.97,rect.y),w:.025,h:.025}],comment:"",size:14,width:2},selection.point);setSelection(null);window.getSelection()?.removeAllRanges()}}/>}
     {annotationImage&&<Modal title="区域截图" subtitle={"第 "+annotationImage.page+" 页"} close={()=>setAnnotationImage(null)} wide><img className="region-crop" src={annotationImage.url} alt="原文选区截图"/><button className="primary" onClick={()=>void window.desktop.savePNG("论文区域-"+annotationImage.page,annotationImage.url).then(saved=>{if(saved)report("截图已保存")}).catch(err=>report(message(err)))}>保存 PNG</button></Modal>}
     {annotation&&<AnnotationCard key={annotation.token} initial={annotation.mark} point={annotation.point} close={()=>setAnnotation(null)}
       save={saveAnnotation} remove={deleteAnnotation} locate={()=>locateAnnotation(annotation.mark)} crop={annotation.mark.kind==='area'?()=>void annotationCrop(annotation.mark):undefined}/>}

@@ -7,16 +7,15 @@ import {allowRemarkLeave} from './LibraryControls';
 import {HelpPage} from './WorkbenchSettings';
 import {LiteratureGuide,markLiteratureGuideSeen,shouldOfferLiteratureGuide} from './LiteratureGuide';
 import {DailyPlanner,HomeToday,PlannerEditor} from './DailyPlanner';
-import {CompanionSettings,FocusDesk,type ResearchSource,type WorkspaceAction} from './Companion';
+import {FocusDesk,type ResearchSource} from './Companion';
 import { enrichMetadata } from './PaperMetadata';
-import { ReadingColorSettings } from './ReadingColors';
-import { Activity, ArrowRight, BookOpen, CalendarDays, CircleHelp, FlaskConical, FolderKanban, GraduationCap, House, LibraryBig, NotebookPen, Search, Settings2, SpellCheck, X } from 'lucide-react';
+import { Activity, ArrowRight, CalendarDays, CircleHelp, FlaskConical, FolderKanban, GraduationCap, House, LibraryBig, Search, Settings2, SpellCheck, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { api, message, type Note, type Paper, type Word } from './api';
+import { api, message, type Paper, type Word } from './api';
 import { Home, Library } from './Library';
-import { blankNote, blankWord, NoteEditor, Notes, WordEditor, Words } from './Notes';
+import { blankWord, WordEditor, Words } from './Notes';
 import { Reader } from './Reader';
-import { AgendaEditor, AgendaRows, Planner, QuickTask, today, type AgendaItem, type Project } from './Agenda';
+import type { AgendaItem, Project } from './Agenda';
 import { Modal } from './ui';
 import { Projects } from './Projects';
 import { PaperImport } from './PaperImport';
@@ -35,14 +34,12 @@ export function App() {
   useEffect(()=>startPaperJobs(),[]);
   const [route, setRoute] = useState<Route>('home');
   const [papers, setPapers] = useState<Paper[]>([]);
-  const [notes, setNotes] = useState<Note[]>([]);
   const [words, setWords] = useState<Word[]>([]);
   const [startReview,setStartReview]=useState(false);
   const [agenda,setAgenda] = useState<AgendaItem[]>([]);
   const [projects,setProjects] = useState<Project[]>([]);
   const [editingAgenda,setEditingAgenda] = useState<AgendaItem | null>(null);
   const [reader, setReader] = useState<{ id: string; page: number; review?:number; source?:ResearchSource&{token:number} }>();
-  const [note, setNote] = useState<Note | null>(null);
   const [word, setWord] = useState<Word | null>(null);
   const [settings, setSettings] = useState(false);
   const [settingsTab,setSettingsTab]=useState('general');
@@ -121,13 +118,13 @@ export function App() {
   }),[]);
   useEffect(() => {
     function keydown(event: KeyboardEvent) {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k' && !note && !word && !settings && !editingAgenda && !importOpen && !importResults && !guideOpen) {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k' && !word && !settings && !editingAgenda && !importOpen && !importResults && !guideOpen) {
         event.preventDefault(); setCommand(value => !value);
       }
     }
     window.addEventListener('keydown',keydown);
     return () => window.removeEventListener('keydown',keydown);
-  }, [note,word,settings,help,editingAgenda,importOpen,importResults,guideOpen]);
+  }, [word,settings,help,editingAgenda,importOpen,importResults,guideOpen]);
   useEffect(() => {
     if (!notice) return;
     const id = setTimeout(() => setNotice(''),5500);
@@ -198,12 +195,7 @@ export function App() {
   function saveAgenda(saved:AgendaItem) {
     setAgenda(rows => rows.some(a => a.id === saved.id) ? rows.map(a => a.id === saved.id ? saved : a) : [...rows,saved]);
   }
-  const date=today();
-  const todayItems=agenda.filter(a=>!a.deleted&&!a.done&&(a.day===date||Boolean(a.deadline)&&a.deadline<=date))
-    .toSorted((a,b)=>Number(Boolean(b.deadline)&&b.deadline<date)-Number(Boolean(a.deadline)&&a.deadline<date)||a.start.localeCompare(b.start));
   const dueCount=words.filter(v=>v.meaning.trim()&&Date.parse(v.dueAt)<=Date.now()).length;
-  const recentNote=notes.find(n=>!n.deleted);
-  const agendaActions = { projects, edit:setEditingAgenda, save:saveAgenda, source, report:setNotice };
 
   return <div className="app-shell">
     <aside className="app-nav" hidden={Boolean(reader)||settings}>
@@ -249,7 +241,7 @@ export function App() {
         <span className={result.error ? 'error' : ''}>{result.error || (result.duplicate ? '文献库中已有相同 PDF' : '已导入')}</span></div>)}</div>
       <div className="form-actions"><button className="primary" onClick={() => setImportResults(null)}>完成</button></div>
     </Modal>}
-    {command && <Command papers={papers} notes={notes} words={words} close={() => setCommand(false)} open={p => { setCommand(false); open(p); }} edit={n => { setCommand(false); setNote(n); }} showWords={() => { setCommand(false); setReader(undefined); setRoute('words'); }}/>}
+    {command && <Command papers={papers} words={words} close={() => setCommand(false)} open={p => { setCommand(false); open(p); }} showWords={() => { setCommand(false); setReader(undefined); setRoute('words'); }}/>}
     
 
   </div>;
@@ -274,7 +266,7 @@ async function importDropped(files:File[]) {
   return result;
 }
 
-function Command({ papers, notes, words, close, open, edit, showWords }: { papers: Paper[]; notes: Note[]; words: Word[]; close: () => void; open: (p: Paper) => void; edit: (n: Note) => void; showWords: () => void }) {
+function Command({ papers, words, close, open, showWords }: { papers: Paper[]; words: Word[]; close: () => void; open: (p: Paper) => void; showWords: () => void }) {
   const [query, setQuery] = useState('');
   const q = query.trim().toLowerCase();
   const items = [

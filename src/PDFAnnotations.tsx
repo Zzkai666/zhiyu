@@ -1,6 +1,6 @@
-import {useRef,useState,type CSSProperties} from 'react';
+import {useRef,useState} from 'react';
 import {BookPlus,Highlighter,Underline,StickyNote,Type,SquareDashed,PenLine,MousePointer2} from 'lucide-react';
-import type {Mark,Rect} from './api';
+import type {Mark} from './api';
 import {colors} from './ReaderMarkTools';
 export type DrawingTool='note'|'text'|'area'|'ink'|null;
 export type MarkDraft=Omit<Mark,'id'>&{id?:string};
@@ -11,7 +11,7 @@ export function DrawingTools({value,change,selecting=true}:{value:DrawingTool;se
    <button key={label} className="icon" title={label} aria-label={label} aria-pressed={value===id&&(id!==null||selecting)} onClick={()=>change(value===id?null:id)}><Icon size={17}/></button>)}
  </div>;
 }
-export function SelectionPalette({point,color,choose,annotate,task,word}:{point:{x:number;y:number};color:Mark['color'];choose:(kind:'highlight'|'underline',color:Mark['color'])=>void;annotate:()=>void;task?:()=>void;word?:{save:()=>void;busy:boolean}}){
+export function SelectionPalette({point,choose,annotate,task,word}:{point:{x:number;y:number};choose:(kind:'highlight'|'underline',color:Mark['color'])=>void;annotate:()=>void;task?:()=>void;word?:{save:()=>void;busy:boolean}}){
  const [kind,setKind]=useState<'highlight'|'underline'>('highlight');
  return <div className="selection-palette" role="toolbar" aria-label="选区标注" style={{left:Math.max(12,Math.min(innerWidth-285,point.x)),top:Math.max(12,Math.min(innerHeight-102,point.y))}} onPointerDown={e=>e.preventDefault()}>
   <div className="selection-swatches">{Object.entries(colors).map(([id,[name,tone]])=><button key={id} aria-label={name+'标记选区'} title={name} style={{background:tone}} onClick={()=>choose(kind,id as Mark['color'])}/>)}</div>

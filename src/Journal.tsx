@@ -10,7 +10,6 @@ import settingsArt from './assets/journal/settings-r1.png';
 import musicArt from './assets/journal/music-r1.png';
 import weatherArt from './assets/journal/weather-r1.png';
 import{useEffect,useState}from'react';
-import type{Paper}from'./api';
 export type ArtKind='books'|'calendar'|'project'|'lab'|'course'|'words'|'life'|'settings'|'music'|'weather'|'library';
 const artFiles={library:libraryArt,books:booksArt,calendar:calendarArt,project:projectArt,lab:labArt,course:courseArt,words:wordsArt,life:lifeArt,settings:settingsArt,music:musicArt,weather:weatherArt};
 export function DeskArt({kind='books',className=''}:{kind?:ArtKind;className?:string}){

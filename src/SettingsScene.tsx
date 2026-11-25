@@ -1,4 +1,4 @@
-import{BookOpen,CalendarDays,Bell,Droplet,Music2,Sun,Layers,Timer,Mail,Monitor}from'lucide-react';
+import{CalendarDays,Bell,Music2,Sun,Layers,Timer,Mail,Monitor}from'lucide-react';
 import{DeskArt}from'./Journal';
 type SceneData={water?:{goal:number};mail?:{accounts:unknown[]};calendar?:{accounts:unknown[]};quota?:{accounts:any[]};weather?:{city:string};desktop?:{enabled:boolean}};
 export function SettingsScene({category,values,desktop,data}:{category:string;values:Record<string,string>;desktop?:{installed?:boolean;ready?:boolean;enabled?:boolean};data?:SceneData}){

@@ -257,7 +257,7 @@ else {
     window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
     window.webContents.on('will-navigate', event => event.preventDefault());
     await window.loadURL(base + '/');
-    island=require('./island.cjs').installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace:data,showMain,mainWindow:()=>window,hiddenTest});
+    island=require('./island.cjs').installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace:data,showMain,mainWindow:()=>window});
     tray=new Tray(resolve(__dirname,'../assets/app.ico'));tray.setToolTip('知屿 · 阅读、学习与每日安排');
     tray.setContextMenu(Menu.buildFromTemplate([
       {label:'打开工作台',click:showMain},

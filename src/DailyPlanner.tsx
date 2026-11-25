@@ -2,7 +2,7 @@ import {DeskArt,MonthNavigator} from './Journal';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {Check,Plus,CalendarDays,Repeat2,MoreHorizontal,ChevronLeft,ChevronRight,RotateCcw} from 'lucide-react';
 import {api,message} from './api';
-import {freshAgenda,today,type AgendaItem,type Project} from './Agenda';
+import {freshAgenda,today,type AgendaItem} from './Agenda';
 import {Modal,Empty} from './ui';
 import './planner.css';
 export type PlannerItem=AgendaItem&{seriesId?:string;occurrenceDay?:string;occurrenceRevision:number;seriesRevision:number};

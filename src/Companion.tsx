@@ -9,7 +9,7 @@ export type ResearchSource={taskId?:string;paperId:string;page:number;markId:str
 export type Focus={id:string;taskId:string;taskRevision:number;title:string;plannedSeconds:number;elapsedSeconds:number;state:'running'|'paused'|'review'|'interrupted'|'finished';revision:number;result:string;note:string;startedAt:string};
 type Snapshot={recent:Paper|null;tasks:AgendaItem[];focus:Focus|null;history:Focus[]};
 export type WorkspaceAction={id:string;action:'open-paper'|'open-task'|'open-home'|'open-settings'|'open-planner'|'prepare-exit';body:{id?:string}};
-export type IslandStatus={installed:boolean;host?:{attached:boolean;visible:boolean};enabled:boolean;keepRunning:boolean;running:boolean;ready:boolean;error:string;pid:number|null;version:string};
+export type IslandStatus={installed:boolean;enabled:boolean;keepRunning:boolean;running:boolean;ready:boolean;error:string;pid:number|null;version:string};
 const uid=()=>crypto.randomUUID().replaceAll('-','');
 export function ResearchTask({paper,mark,source:provided,close,report}:{paper:Paper;mark?:Mark;source?:ResearchSource;close:()=>void;report:(text:string)=>void}){
  const source=provided||{paperId:paper.id,page:mark!.page,markId:mark!.id,markRevision:mark!.revision||1,quote:mark!.quote||mark!.content||mark!.comment||'',rects:mark!.rects};

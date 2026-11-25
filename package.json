@@ -1,7 +1,7 @@
 {
   "name": "researchdesk-next",
   "productName": "知屿",
-  "version": "0.9.12",
+  "version": "0.9.13",
   "private": true,
   "type": "module",
   "description": "Local-first research workspace and PDF reader",

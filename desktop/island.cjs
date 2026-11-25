@@ -5,10 +5,9 @@ const {existsSync}=require('node:fs');
 const {mkdir,readFile,writeFile,rename}=require('node:fs/promises');
 const {randomBytes}=require('node:crypto');
 
-function installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace,showMain,mainWindow,hiddenTest}){
+function installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace,showMain,mainWindow}){
  let child=null,ready=false,stopping=false,timer=null,polling=false,sequence=Promise.resolve(),error='',lastSnapshot=null;
  let settings={enabled:true,keepRunning:true};
- let hostStatus={attached:false,visible:false},hostRect=null;
  const prefs=join(workspace,'desktop-settings.json'),profile=join(workspace,'island');
  const executable=join(resources,...(app.isPackaged?['bin']:['dist','bin']),'researchdesk-island.exe');
  const pending=new Map(),settingsRequests=new Map();let webOpen=false;
@@ -75,15 +74,14 @@ function installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace
    if(line.length>65536){error='小岛通信消息过大';void stop();return}
    let v;try{v=JSON.parse(line)}catch{return}
    if(v.type==='settings-api-result'){const item=settingsRequests.get(v.requestId);if(item){clearTimeout(item.timer);settingsRequests.delete(v.requestId);v.error?item.reject(Error(String(v.error).slice(0,600))):item.resolve(v.data)}return}
-   if(v.type==='settings-host-status'){hostStatus=v;return}
-   if(v.type==='ready'&&v.protocol===1){ready=true;if(hostRect)send({type:'settings-host',host:hostRect});void poll();return}
+   if(v.type==='ready'&&v.protocol===1){ready=true;void poll();return}
    sequence=sequence.then(async()=>{
     try{send({type:'result',requestId:v.requestId,notice:await command(v)})}
     catch(e){send({type:'result',requestId:v.requestId,error:e.message})}
    });
   });
   active.on('error',e=>{error='小岛启动失败：'+e.message});
-  active.on('exit',(code)=>{for(const item of settingsRequests.values()){clearTimeout(item.timer);item.reject(Error('小岛服务已断开，请重试连接'))}settingsRequests.clear();if(child!==active)return;child=null;ready=false;hostStatus={attached:false,visible:false};if(timer)clearInterval(timer);timer=null;
+  active.on('exit',()=>{for(const item of settingsRequests.values()){clearTimeout(item.timer);item.reject(Error('小岛服务已断开，请重试连接'))}settingsRequests.clear();if(child!==active)return;child=null;ready=false;if(timer)clearInterval(timer);timer=null;
    if(!stopping){error='小岛已退出，可在设置中重新启动';showMain();}
   });
   timer=setInterval(()=>void poll(),1000);timer.unref();await poll();
@@ -93,18 +91,18 @@ function installIsland({app,ipcMain,assertSender,coreRequest,resources,workspace
   const active=child;
   send({type:'shutdown'});active.stdin.end();
   await new Promise(resolve=>{if(active.exitCode!==null){resolve();return}const force=setTimeout(()=>{active.kill();resolve()},4000);active.once('exit',()=>{clearTimeout(force);resolve()})});
-  if(child===active){child=null;ready=false;hostStatus={attached:false,visible:false};}
+  if(child===active){child=null;ready=false;}
  }
  async function save(next){
   if(typeof next.enabled!=='boolean'||typeof next.keepRunning!=='boolean')throw Error('小岛设置无效');
   const temp=prefs+'.'+randomBytes(6).toString('hex')+'.tmp';
   await writeFile(temp,JSON.stringify(next),{flag:'wx'});await rename(temp,prefs);
   settings={enabled:next.enabled,keepRunning:next.keepRunning};
-  if(settings.enabled)await start();else if(!hostRect?.visible&&!webOpen)await stop();
+  if(settings.enabled)await start();else if(!webOpen)await stop();
   await poll();
   return status();
  }
- function status(){return{...settings,installed:existsSync(executable),host:hostStatus,running:!!child,ready,error,pid:child?.pid||null,version:'0.6.64-rd.4',snapshot:lastSnapshot};}
+ function status(){return{...settings,installed:existsSync(executable),running:!!child,ready,error,pid:child?.pid||null,version:'0.6.64-rd.4',snapshot:lastSnapshot};}
  const webActions=new Set(['open','snapshot','save','close','mail-connect','mail-test','mail-retest','mail-remove','mail-toggle','calendar-select','calendar-connect','calendar-sync','calendar-forget','calendar-import','quota-connect','quota-remove','quota-update','quota-options','quota-refresh','quota-discover','quota-cancel','notification-connect','notification-disconnect','notification-app','open-page','water-save','weather-search','weather-use','weather-add','weather-remove','weather-refresh']);
  ipcMain.handle('island-web',async(event,action,body={})=>{
   assertSender(event);

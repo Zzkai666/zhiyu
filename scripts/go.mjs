@@ -7,7 +7,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const local = join(root, '.toolchain', 'go', 'bin', process.platform === 'win32' ? 'go.exe' : 'go');
 const out = join(root, 'dist', 'bin');
 const bin = join(out, process.platform === 'win32' ? 'researchdesk-core.exe' : 'researchdesk-core');
-const args = { build: ['build', '-trimpath', '-o', bin, './cmd/core'], test: ['test', './...'], stub: ['build','-o',join(out,'rdnext-test-codex.exe'),'./scripts/test-codex'], tidy: ['mod', 'tidy'], fmt: ['fmt', './...'] }[process.argv[2]];
+const packages = ['./cmd/...', './internal/...', './scripts/...'];
+const args = { build: ['build', '-trimpath', '-o', bin, './cmd/core'], test: ['test', ...packages], stub: ['build','-o',join(out,'rdnext-test-codex.exe'),'./scripts/test-codex'], tidy: ['mod', 'tidy'], fmt: ['fmt', ...packages] }[process.argv[2]];
 if (!args) throw new Error('Expected build, test, tidy or fmt');
 mkdirSync(out, { recursive: true });
 const result = spawnSync(existsSync(local) ? local : 'go', args, {
