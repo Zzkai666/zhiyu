@@ -30,5 +30,5 @@ Login startup targets the parent product.
 The optional researchdesk-preview binary is a development acceptance artifact, never shipped.
 System DWM blur, real third-party account connections and multi-monitor DPI require separate acceptance.
 Expanded panels now have full-height side navigation rails within the reserved gutters, with centered arrows and hover/press feedback. Existing page order and hidden-module navigation are preserved. The --navigation preview mode drives real egui pointer input at rail corners without opening a native window.
-See ../../REACT-SETTINGS-FIX-0.7.1.md, ../../ISLAND-NAVIGATION-0.7.2.md and ../../RELEASE-0.7.2.md for implementation and validation.
+See the [settings implementation](../../REACT-SETTINGS-FIX-0.7.1.md), [navigation changes](../../ISLAND-NAVIGATION-0.7.2.md) and [historical release validation](https://github.com/Zzkai666/zhiyu/blob/v0.9.12/RELEASE-0.7.2.md).
 The Windows development build uses GNU; the upstream MSVC path remains available.

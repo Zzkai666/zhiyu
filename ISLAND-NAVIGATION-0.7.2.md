@@ -19,4 +19,4 @@
 - researchdesk-preview 的 --navigation 模式：真实 egui 输入与软件光栅渲染；不启动桌面窗口，不访问用户资料或账号。
 - scripts/island-navigation-smoke.mjs：逐个点击远离箭头的四个上下角，验证切页与跳过隐藏页；检查长/短页尺寸，以及单页隐藏，不发送任务变更命令。
 
-最终成品、验证结果与 hash 见 RELEASE-0.7.2.md。Windows 系统毛玻璃合成不由软件光栅器证明；保留原生启动验证，实际桌面观感由用户验收。
+Windows 系统毛玻璃合成不由软件光栅器证明；保留原生启动验证，实际桌面观感由用户验收。最终成品、验证结果和哈希见 [0.7.2 历史发布记录](https://github.com/Zzkai666/zhiyu/blob/v0.9.12/RELEASE-0.7.2.md)。
