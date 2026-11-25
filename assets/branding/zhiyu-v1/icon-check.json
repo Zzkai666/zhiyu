@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "sourceSize": {
+    "width": 1254,
+    "height": 1254
+  },
+  "icoSizes": [
+    16,
+    24,
+    32,
+    48,
+    64,
+    128,
+    256
+  ],
+  "format": "ICO with seven PNG-compressed 32-bit entries",
+  "method": "Electron nativeImage resampling and ICO container packaging; no creative image edits"
+}

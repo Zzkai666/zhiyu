@@ -1,0 +1,16 @@
+{
+  "conceptPages": 27,
+  "loadedImages": 27,
+  "settingsPages": 11,
+  "imageTool": "built-in image_gen",
+  "productionPackagesUnchanged": true,
+  "productionCodeChanged": false,
+  "temporaryReviewArtifactsRemoved": [
+    ".review-profile",
+    ".review-qa.cjs",
+    "review-check.log",
+    "review-check-error.log"
+  ],
+  "temporaryArtifactsKept": [],
+  "formalDataTouched": false
+}

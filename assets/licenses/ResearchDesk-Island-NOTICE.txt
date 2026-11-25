@@ -1,0 +1,13 @@
+ResearchDesk desktop island uses a modified Daozai 0.6.64.
+Upstream: https://github.com/Renly1994/xiaotang-daozai
+Pinned source: 6eb33732f9b2150e02eef1b1f824b0c087a2c5f2
+Daozai original code: MIT, copyright 2026 小唐的Token and Daozai contributors.
+See Daozai-LICENSE.txt and Daozai-THIRD-PARTY-NOTICES.txt distributed alongside this notice.
+Integration changes provide ResearchDesk inherited-pipe commands, a research page,
+GlassLight first-profile preference, and unified process lifecycle/settings.
+Themes, visual materials and animation remain based on Daozai.
+
+This Windows build uses Rust 1.100.0 x86_64-pc-windows-gnu and WinLibs GCC 16.2.0/
+MinGW-w64 14.0.0. See the accompanying GCC Runtime Exception, GPL and MinGW/Winpthreads
+license texts for relevant runtime portions. Windows system DLLs are not redistributed.
+This notice does not imply endorsement by Daozai or any service provider.

@@ -1,0 +1,29 @@
+.review-queue { margin: 0 -4px; }
+.reader .review-queue .review-item { padding: 0; border-radius: 0; border-bottom-color: var(--border); }
+.reader .review-queue .review-item[data-selected=true] {
+  background: #f9f1e6; box-shadow: inset 2px 0 #a36548;
+}
+.review-queue .review-jump {
+  display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 3px 10px;
+  align-items: center; width: 100%; padding: 9px 10px; text-align: left;
+}
+.review-queue .review-jump:hover { background: #a365480d; }
+.review-queue .review-jump strong { grid-column: 1; font-size: 13px; color: var(--ink); line-height: 1.35; }
+.review-queue .review-jump svg { grid-column: 2; grid-row: 1 / span 2; color: var(--muted); transition: transform 140ms ease; }
+.review-queue .review-jump[aria-expanded=true] svg { transform: rotate(180deg); }
+.review-row-meta { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+.review-row-meta > span { padding: 1px 5px; border-radius: 4px; background: #eee4d7; color: #694527; }
+[data-category=label] .review-row-meta > span { background: #eee6f2; color: #654779; }
+[data-category=source] .review-row-meta > span { background: #f4e7e5; color: #853e38; }
+.review-expanded { padding: 0 10px 10px; }
+.review-current-label { margin: 1px 0 7px; color: var(--muted); font-size: 12px; }
+.review-current-label strong { color: var(--ink); }
+.review-queue .review-excerpts { gap: 4px; margin: 1px 0 6px; }
+.review-queue .review-fragment { background: #fffaf4; border: 1px solid #eaddcd; padding: 5px 7px; }
+.review-queue .review-fragment span:last-child { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.review-queue .review-correct { white-space: nowrap; padding-inline: 5px; }
+.review-actions { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+.review-actions > button { padding: 4px 8px; min-height: 28px; font-size: 12px; }
+.review-why { color: var(--muted); font-size: 11px; margin-top: 7px; }
+.review-why summary { cursor: pointer; width: fit-content; }
+@media (prefers-reduced-motion: reduce) { .review-queue .review-jump svg { transition: none; } }

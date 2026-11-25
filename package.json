@@ -1,0 +1,114 @@
+{
+  "name": "researchdesk-next",
+  "productName": "知屿",
+  "version": "0.9.12",
+  "private": true,
+  "type": "module",
+  "description": "Local-first research workspace and PDF reader",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "build": "node scripts/check-desktop.mjs && tsc --noEmit && vite build && node scripts/pdf-assets.mjs && node scripts/go.mjs build",
+    "start": "electron .",
+    "test": "node scripts/go.mjs test && node --experimental-strip-types --test tests/*.test.mts",
+    "test:desktop": "node scripts/go.mjs stub && node scripts/reading-smoke.mjs",
+    "test:workspace": "node scripts/workspace-smoke.mjs",
+    "test:reader-ux": "node scripts/go.mjs stub && node scripts/reader-ux-smoke.mjs",
+    "package:win": "npm run build:island && npm run build && node scripts/check-product.mjs && electron-builder --win dir --x64 --publish never && node scripts/optional-installer.mjs release/win-unpacked",
+    "build:island": "node scripts/island-build.mjs",
+    "package:preview": "npm run build:island && npm run build && node scripts/check-product.mjs && electron-builder --win portable --x64 --publish never"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "1.1.1",
+    "onnxruntime-node": "1.22.0",
+    "pdf-lib": "1.17.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@radix-ui/react-dialog": "1.3.1",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.1.1",
+    "electron": "44.8.0",
+    "electron-builder": "26.18.0",
+    "lucide-react": "1.50.0",
+    "pdfjs-dist": "6.3.289",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "typescript": "6.0.3",
+    "vite": "8.3.2"
+  },
+  "build": {
+    "appId": "local.researchdesk.next",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**",
+      "dist/ui/**",
+      "assets/app.ico",
+      "package.json",
+      "!node_modules/onnxruntime-node/bin/napi-v6/{darwin,linux}/**",
+      "!node_modules/onnxruntime-node/bin/napi-v6/win32/arm64/**",
+      "assets/fonts/**"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/bin",
+        "to": "bin",
+        "filter": [
+          "researchdesk-core.exe",
+          "researchdesk-island.exe",
+          "*.dll"
+        ]
+      },
+      {
+        "from": "models",
+        "to": "models",
+        "filter": [
+          "pp-doclayoutv2.onnx",
+          "README.md",
+          "LICENSE-PP-DocLayoutV2"
+        ]
+      },
+      {
+        "from": "components/daozai/LICENSE",
+        "to": "licenses/Daozai-LICENSE.txt"
+      },
+      {
+        "from": "components/daozai/THIRD_PARTY_NOTICES.txt",
+        "to": "licenses/Daozai-THIRD-PARTY-NOTICES.txt"
+      },
+      {
+        "from": "assets/licenses",
+        "to": "licenses",
+        "filter": [
+          "*.txt"
+        ]
+      }
+    ],
+    "asarUnpack": [
+      "node_modules/onnxruntime-node/bin/**"
+    ],
+    "win": {
+      "icon": "assets/app.ico",
+      "signAndEditExecutable": false,
+      "target": "nsis",
+      "executableName": "ResearchDesk Next"
+    },
+    "portable": {
+      "unpackDirName": true,
+      "requestExecutionLevel": "user",
+      "artifactName": "${productName} ${version}.exe"
+    },
+    "nsis": {
+      "installerIcon": "assets/app.ico",
+      "uninstallerIcon": "assets/app.ico",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "beforePack": "./scripts/before-pack.cjs",
+    "afterPack": "./scripts/brand-after-pack.cjs"
+  }
+}

@@ -1,0 +1,26 @@
+# Local dependencies, builds and test output
+/.toolchain/
+node_modules/
+dist/
+/release/
+/models/*.onnx
+/test-results/
+*.exe
+*.pdb
+*.log
+
+# Local workspaces, backups and credentials
+/recovery/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+Thumbs.db
+.DS_Store

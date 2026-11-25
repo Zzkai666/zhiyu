@@ -1,0 +1,11 @@
+.paper-export {display:grid;gap:14px;margin-top:15px}
+.export-formats {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.export-formats button {display:flex;align-items:center;gap:10px;padding:12px;text-align:left;border:1px solid var(--border);border-radius:7px;background:#fffdf9}
+.export-formats button[aria-pressed="true"] {border-color:#aa7542;background:#f7eddf;box-shadow:inset 0 0 0 1px #aa7542}
+.export-formats span {display:grid;gap:4px}.export-formats strong {font-size:13px}.export-formats small {font-size:11px;color:var(--muted)}
+.export-summary {display:grid;gap:8px;padding:13px;background:#faf6ef;border-radius:7px;font-size:12px;line-height:1.7}
+.export-summary p {margin:0}.export-summary small {color:var(--muted)}.export-summary input {accent-color:var(--accent)}
+.export-progress {display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);min-height:18px;margin:0}
+.export-saved {display:grid;gap:7px;border:1px solid #bdd8b8;background:#f3faf0;padding:12px;border-radius:7px;font-size:12px}
+.export-saved p {margin:0;overflow-wrap:anywhere}.export-saved > div {display:flex;gap:8px}.export-spinner {width:12px;height:12px;border:2px solid #d9c8ad;border-right-color:#9a642d;border-radius:50%;animation:export-spin .8s linear infinite}
+@keyframes export-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.export-spinner {animation:none}}

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "sourceSize": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sizes": [
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    128,
+    256
+  ],
+  "mascotSize": {
+    "width": 1086,
+    "height": 1448
+  },
+  "mascotCornerAlpha": [
+    0,
+    0,
+    0
+  ],
+  "method": "nativeImage format conversion and size resampling only"
+}

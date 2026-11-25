@@ -1,0 +1,27 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('desktop', {
+  islandWeb:(action,body)=>ipcRenderer.invoke('island-web',action,body),
+  islandRestart:()=>ipcRenderer.invoke('island-restart'),
+  onPlannerChanged:callback=>{const listener=()=>callback();ipcRenderer.on('planner-changed',listener);return()=>ipcRenderer.removeListener('planner-changed',listener)},
+  islandStatus:()=>ipcRenderer.invoke('island-status'),
+  islandSettings:next=>ipcRenderer.invoke('island-settings',next),
+  islandAppearance:()=>ipcRenderer.invoke('island-open-settings'),
+  onWorkspaceAction:callback=>{const listener=(_event,value)=>callback(value);ipcRenderer.on('workspace-action',listener);return()=>ipcRenderer.removeListener('workspace-action',listener)},
+  workspaceActionResult:value=>ipcRenderer.send('workspace-action-result',value),
+  importPDF: () => ipcRenderer.invoke('import-pdf'),
+  preparePaperExport: id=>ipcRenderer.invoke('prepare-paper-export',id),
+  releasePaperExport: id=>ipcRenderer.invoke('release-paper-export',id),
+  exportPaper: input=>ipcRenderer.invoke('export-paper',input),
+  openPaperExport: (id,folder)=>ipcRenderer.invoke('open-paper-export',id,folder),
+  openExternal: url=>ipcRenderer.invoke('open-external',url),
+  savePNG: (filename,url)=>ipcRenderer.invoke('save-png',filename,url),
+  saveMarkdown: (filename, contents) => ipcRenderer.invoke('save-markdown', filename, contents),
+  workspaceInfo: () => ipcRenderer.invoke('workspace-info'),
+  paperJobsActive: active => ipcRenderer.invoke('paper-jobs-active',active),
+  openBuddyLogin: () => ipcRenderer.invoke('buddy-login-open'),
+  chooseCodex: () => ipcRenderer.invoke('choose-codex'),
+  openWorkspaceFolder: () => ipcRenderer.invoke('workspace-open'),
+  layoutReady: () => ipcRenderer.invoke('layout-ready'),
+  detectLayout: pixels => ipcRenderer.invoke('layout-run', pixels),
+});

@@ -1,0 +1,179 @@
+[
+  {
+    "id": "01-home",
+    "title": "今日工作台",
+    "file": "01-home-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-36b33775-940c-4337-a080-e5790aed6644.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-5ce6c3d4-e4bb-4e3e-a189-4ac76a998784.png",
+    "revision": 2
+  },
+  {
+    "id": "02-planner",
+    "title": "任务日程·每日清单",
+    "file": "02-planner.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-8b33db26-ccf8-4404-adad-7256bd894c30.png"
+  },
+  {
+    "id": "03-recurring",
+    "title": "任务日程·重复安排",
+    "file": "03-recurring.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-201d1e75-1790-4a16-a2a6-6105d5170786.png"
+  },
+  {
+    "id": "04-projects",
+    "title": "目标与项目·项目工作区",
+    "file": "04-projects.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-febd1718-14c9-444f-ac85-2030120aabf7.png"
+  },
+  {
+    "id": "05-goals",
+    "title": "目标与项目·目标进展",
+    "file": "05-goals.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-45443f66-887c-43de-828a-d06118758cfe.png"
+  },
+  {
+    "id": "06-library",
+    "title": "文献库",
+    "file": "06-library.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-787d0496-38a2-46e1-8e83-05d981dbe72d.png"
+  },
+  {
+    "id": "07-bilingual",
+    "title": "论文阅读·双语对照",
+    "file": "07-bilingual-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c2c0d647-20ab-4e57-ac5d-09090d3d2ee0.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-802a13ad-15f6-4263-8e38-04ab1059cee8.png",
+    "revision": 2
+  },
+  {
+    "id": "08-original",
+    "title": "论文阅读·原文与批注",
+    "file": "08-original-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-ccf420ce-08fc-4a43-a6bf-e6ea1ce93bcf.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-47cd9314-1e26-41fe-aba5-4ff43f98d84e.png",
+    "revision": 2
+  },
+  {
+    "id": "09-parse",
+    "title": "论文解析核对",
+    "file": "09-parse.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-278aee7f-0981-4f0e-9050-9b6e1bdab20e.png"
+  },
+  {
+    "id": "10-lab",
+    "title": "实验记录",
+    "file": "10-lab.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-ac73cd20-ba98-4679-8da9-6fc500dfde88.png"
+  },
+  {
+    "id": "11-courses",
+    "title": "课程学习",
+    "file": "11-courses-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-7d37e25a-87ab-4384-8ca8-ea8419ad0ade.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c6e3806d-85e1-4ccc-aa53-c159b81b1236.png",
+    "revision": 2
+  },
+  {
+    "id": "12-vocabulary",
+    "title": "生词与复习·词库",
+    "file": "12-vocabulary.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c51c216e-8877-4448-9033-86dee98aa475.png"
+  },
+  {
+    "id": "13-review",
+    "title": "生词与复习·专注复习",
+    "file": "13-review.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-6d3fb4d3-b2eb-469f-a5a6-9412200dd26d.png"
+  },
+  {
+    "id": "14-life",
+    "title": "运动与生活",
+    "file": "14-life.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-38834d26-0fb6-4565-b06c-4a6b1e802af6.png"
+  },
+  {
+    "id": "15-import",
+    "title": "导入论文",
+    "file": "15-import-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-93b03a80-0c9c-421b-8540-6b44afd029a0.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-1d183cbc-4f7f-4754-a127-d6f511cf2e4d.png",
+    "revision": 2
+  },
+  {
+    "id": "16-settings-general",
+    "title": "设置·常规",
+    "file": "16-settings-general.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe28e4c6-9960-4c02-bdf9-59774d3c772d.png"
+  },
+  {
+    "id": "17-settings-reading",
+    "title": "设置·阅读",
+    "file": "17-settings-reading-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-f2b7bf2d-4111-4102-a185-0e3ff7a8e371.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-6a0799f7-9618-4e0d-8f88-4e2a83fa8e20.png",
+    "revision": 2
+  },
+  {
+    "id": "18-settings-island",
+    "title": "设置·小岛外观与停靠",
+    "file": "18-settings-island.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-d7509d13-015a-4fe8-ae00-955188ef4e14.png"
+  },
+  {
+    "id": "19-settings-pages",
+    "title": "设置·页面与状态组件",
+    "file": "19-settings-pages.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-8d132808-4714-4307-afcb-487e03bb1d25.png"
+  },
+  {
+    "id": "20-settings-music",
+    "title": "设置·音乐与歌词",
+    "file": "20-settings-music.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-0d073dc6-5235-4997-b16a-3e27aa3383be.png"
+  },
+  {
+    "id": "21-settings-health",
+    "title": "设置·专注与饮水",
+    "file": "21-settings-health.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c037e8be-8d54-4874-83a0-b1d6a3afe294.png"
+  },
+  {
+    "id": "22-settings-notifications",
+    "title": "设置·通知",
+    "file": "22-settings-notifications.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-f5a8574a-924d-4cca-bb27-2ee358c785cc.png"
+  },
+  {
+    "id": "23-settings-mail",
+    "title": "设置·邮箱账号",
+    "file": "23-settings-mail.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-9a4d9c4c-2d5a-4383-bd76-be16643aaf31.png"
+  },
+  {
+    "id": "24-settings-calendar",
+    "title": "设置·日历账号",
+    "file": "24-settings-calendar.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe741b2d-5214-4c36-b50d-036d9a6b52ea.png"
+  },
+  {
+    "id": "25-settings-quota",
+    "title": "设置·AI额度",
+    "file": "25-settings-quota.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-490d4e25-bcb0-4fa4-a7ec-87fff64990c0.png"
+  },
+  {
+    "id": "26-settings-weather",
+    "title": "设置·天气",
+    "file": "26-settings-weather.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-397a0aa3-53f6-4c1a-8d82-9799d29b1b70.png",
+    "revision": 1
+  },
+  {
+    "id": "27-help",
+    "title": "版本与帮助",
+    "file": "27-help-v2.png",
+    "path": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-d1241fa0-6600-482f-9ba9-030d929d9f60.png",
+    "previousPath": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-e0e2b53a-d5ff-4e3b-ba88-4c2431f3a9b0.png",
+    "revision": 2
+  }
+]

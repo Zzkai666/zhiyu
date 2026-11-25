@@ -1,0 +1,42 @@
+.reader-body {position:relative}
+.reader-body[data-bilingual="true"] > .translation-pane {flex:var(--translation-share,.5) 1 0;width:0;min-width:0}
+.translation-pane {display:flex;flex-direction:column;min-height:0;background:#fff;box-shadow:inset 1px 0 var(--border)}
+.translation-pane > .reading-content {flex:1;min-height:0;overflow:auto;overscroll-behavior:contain}
+.reader-body[data-translation-left="true"] > .translation-pane {order:-1;box-shadow:inset -1px 0 var(--border)}
+.reader-body[data-translation-left="true"] > .reader-auxiliary {order:2}
+.reader-auxiliary {width:clamp(280px,var(--reader-pane,330px),380px);flex:0 0 auto;display:flex;flex-direction:column;min-height:0;background:#fffdf9;border-left:1px solid var(--border);overflow:hidden}
+.reader-auxiliary > .reading-content {flex:1;min-height:0;overflow:auto}
+.reader-auxiliary .reading-tabs {flex-shrink:0;padding-bottom:0}
+.reader-auxiliary .reading-tabs h2 {font-size:13px;padding:9px 5px;margin:0}
+.reader-auxiliary .reading-tabs > .icon {margin-left:auto}
+.translation-article .reader-source-nav {display:flex;flex-wrap:wrap;gap:5px;overflow:visible;margin:8px 0 2px;padding:4px 0;background:transparent;border:0;font:12px/1.4 "Microsoft YaHei",sans-serif;text-indent:0}
+.translation-article .reader-source-nav .source-chip {padding:4px 7px}
+.annotation-card {position:relative;border:1px solid #e2d8ca;border-radius:8px;background:#fffdfa;padding:0;min-width:0;box-shadow:0 1px 3px #4b321d08;font-family:"Microsoft YaHei",sans-serif;font-size:12px;color:#43372b}
+.annotation-popover {position:fixed;z-index:48;width:310px;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);overflow:auto;box-shadow:0 6px 26px #4b321d33}
+.annotation-card-head {display:flex;align-items:center;gap:6px;min-height:36px;padding:3px 7px;background:color-mix(in srgb,var(--annotation-tone) 9%,#fffdf9);border-radius:7px 7px 0 0;border-bottom:1px solid #eadfce}
+.annotation-card-head > svg {color:var(--annotation-tone);flex-shrink:0}
+.annotation-card-head .annotation-page {padding:2px 0;text-align:left;font-size:11px;flex:1;white-space:nowrap;color:inherit}
+.annotation-card-head .annotation-page:disabled {opacity:1;cursor:default}
+.annotation-card-head .icon {height:26px;width:26px;padding:3px;flex-shrink:0}
+.annotation-card blockquote {margin:10px 11px 6px;padding:0 0 0 8px;border-left:3px solid var(--annotation-tone);font-size:12px;line-height:1.65;max-height:100px;overflow:auto;white-space:pre-wrap}
+.annotation-input {display:grid;gap:4px;margin:10px 11px 0;color:#776858;font-size:11px}
+.annotation-input textarea {width:100%;min-height:52px;resize:vertical;background:transparent;border:1px solid #e5dacb;border-radius:5px;padding:7px;font:12px/1.6 "Microsoft YaHei",sans-serif;color:#43372b;box-sizing:border-box}
+.annotation-input textarea:focus {outline:2px solid #bd8d5a55;border-color:#a97643;background:#fff}
+.annotation-card footer {display:flex;justify-content:space-between;align-items:center;padding:7px 10px;gap:8px;font-size:11px;color:#8b755e}
+.annotation-card .annotation-save {padding:4px 8px;font-size:11px;border-radius:4px;background:#efe4d4;color:#744a23}
+.annotation-card .annotation-save:disabled {opacity:.45}
+.annotation-card .error {padding:4px 10px;font-size:11px}
+.annotation-options {position:fixed;z-index:65;width:214px;max-height:min(340px,calc(100vh - 24px));overflow:auto;background:#fffdf9;border:1px solid #ddcfbc;border-radius:6px;box-shadow:0 5px 18px #4b321d29;padding:5px}
+.annotation-options .annotation-colors {display:grid;grid-template-columns:1fr 1fr;gap:2px;border-bottom:1px solid #e8dece;margin-bottom:4px;padding-bottom:5px}
+.annotation-options button {font-family:"Microsoft YaHei",sans-serif;display:flex;align-items:center;gap:7px;text-align:left;width:100%;padding:6px 7px;font-size:12px;border-radius:4px}
+.annotation-options button:hover,.annotation-options [aria-checked="true"] {background:#f1e7d8}
+.annotation-options i {width:14px;height:14px;border:1px solid #0001;border-radius:3px}
+.annotation-options span {margin-left:auto}
+.annotation-options label {display:flex;align-items:center;gap:6px;padding:6px;font-size:11px}
+.annotation-options input {min-width:0;max-width:108px}
+.annotation-records {display:grid;align-content:start;gap:10px;padding:12px}
+.annotation-records > .annotation-card {border-top:1px solid #e2d8ca}
+@media(max-width:1100px){
+ .reader-auxiliary {position:absolute;z-index:20;right:0;top:0;bottom:0;width:min(340px,48vw);box-shadow:-6px 0 24px #4b321d22}
+ .reader-body[data-translation-left="true"] > .reader-auxiliary {order:initial}
+}

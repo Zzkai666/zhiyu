@@ -1,0 +1,423 @@
+[
+  {
+    "id": "appearance",
+    "label": "外观与停靠",
+    "fields": [
+      {
+        "key": "skin",
+        "label": "小岛主题",
+        "type": "select",
+        "options": [
+          [
+            "classic",
+            "经典黑"
+          ],
+          [
+            "cream",
+            "奶油"
+          ],
+          [
+            "glass_light",
+            "毛玻璃·浅"
+          ],
+          [
+            "glass",
+            "毛玻璃·深"
+          ],
+          [
+            "fluid",
+            "悬浮云"
+          ]
+        ]
+      },
+      {
+        "key": "island_shape",
+        "label": "形状",
+        "type": "select",
+        "options": [
+          [
+            "notch",
+            "刘海"
+          ],
+          [
+            "pill",
+            "胶囊"
+          ]
+        ]
+      },
+      {
+        "key": "dock",
+        "label": "停靠位置",
+        "type": "select",
+        "options": [
+          [
+            "top",
+            "顶部"
+          ],
+          [
+            "left",
+            "左侧"
+          ],
+          [
+            "right",
+            "右侧"
+          ]
+        ]
+      },
+      {
+        "key": "display_id",
+        "label": "显示屏",
+        "type": "display"
+      },
+      {
+        "key": "island_size",
+        "label": "岛体大小（%）",
+        "type": "number",
+        "min": 80,
+        "max": 140
+      },
+      {
+        "key": "island_offset",
+        "label": "沿屏幕边缘的位置",
+        "type": "number",
+        "min": -100,
+        "max": 100
+      },
+      {
+        "key": "glass_blur",
+        "label": "背景模糊",
+        "type": "bool"
+      },
+      {
+        "key": "pet",
+        "label": "显示吉祥物",
+        "type": "bool"
+      },
+      {
+        "key": "minimal",
+        "label": "简洁模式",
+        "type": "bool"
+      },
+      {
+        "key": "browser_minimal",
+        "label": "浏览器中使用简洁模式",
+        "type": "bool"
+      },
+      {
+        "key": "hide_fullscreen",
+        "label": "全屏时隐藏小岛",
+        "type": "bool"
+      },
+      {
+        "key": "avoid_browsers",
+        "label": "避开浏览器顶部",
+        "type": "bool"
+      },
+      {
+        "key": "avoid_top_bar",
+        "label": "避开已有顶栏",
+        "type": "bool"
+      },
+      {
+        "key": "render_compat",
+        "label": "兼容渲染（重启小岛生效）",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "id": "pages",
+    "label": "页面与状态组件",
+    "fields": [
+      {
+        "key": "show_battery",
+        "label": "显示电量",
+        "type": "bool"
+      },
+      {
+        "key": "clock_12h",
+        "label": "12 小时制",
+        "type": "bool"
+      },
+      {
+        "key": "clock_period",
+        "label": "时间段文字",
+        "type": "select",
+        "options": [
+          [
+            "0",
+            "不显示"
+          ],
+          [
+            "1",
+            "上午 / 下午"
+          ],
+          [
+            "2",
+            "凌晨 / 上午 / 中午 / 下午 / 傍晚 / 晚上"
+          ]
+        ]
+      },
+      {
+        "key": "island_lyrics",
+        "label": "收起时显示歌词",
+        "type": "bool"
+      },
+      {
+        "key": "clipboard_history",
+        "label": "记录最近复制的文字",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "id": "music",
+    "label": "音乐与歌词",
+    "fields": [
+      {
+        "key": "lyrics_enabled",
+        "label": "同步歌词",
+        "type": "bool"
+      },
+      {
+        "key": "lyric_delay_ms",
+        "label": "歌词时间调整（毫秒）",
+        "type": "number",
+        "min": -5000,
+        "max": 5000
+      }
+    ]
+  },
+  {
+    "id": "health",
+    "label": "专注与饮水",
+    "fields": [
+      {
+        "key": "focus_minutes",
+        "label": "专注时长（分钟）",
+        "type": "number",
+        "min": 1,
+        "max": 180
+      },
+      {
+        "key": "rest_minutes",
+        "label": "休息时长（分钟）",
+        "type": "number",
+        "min": 1,
+        "max": 60
+      },
+      {
+        "key": "serving_ml",
+        "label": "每次记录饮水量（ml）",
+        "type": "number",
+        "min": 50,
+        "max": 1000
+      },
+      {
+        "key": "water_minutes",
+        "label": "饮水提醒间隔（分钟）",
+        "type": "number",
+        "min": 5,
+        "max": 180
+      },
+      {
+        "key": "sit_remind",
+        "label": "久坐提醒",
+        "type": "bool"
+      },
+      {
+        "key": "sit_minutes",
+        "label": "久坐提醒间隔（分钟）",
+        "type": "number",
+        "min": 15,
+        "max": 180
+      },
+      {
+        "key": "water_start",
+        "label": "提醒开始时间（小时）",
+        "type": "number",
+        "min": 0,
+        "max": 23
+      },
+      {
+        "key": "water_end",
+        "label": "提醒结束时间（小时）",
+        "type": "number",
+        "min": 0,
+        "max": 24
+      },
+      {
+        "key": "lunch_rest",
+        "label": "午休不提醒",
+        "type": "bool"
+      },
+      {
+        "key": "lunch_start",
+        "label": "午休开始",
+        "type": "time",
+        "min": 0,
+        "max": 1439
+      },
+      {
+        "key": "lunch_end",
+        "label": "午休结束",
+        "type": "time",
+        "min": 1,
+        "max": 1439
+      }
+    ]
+  },
+  {
+    "id": "notifications",
+    "label": "通知",
+    "fields": [
+      {
+        "key": "notifications",
+        "label": "提醒总开关",
+        "type": "bool"
+      },
+      {
+        "key": "sound",
+        "label": "提醒声音",
+        "type": "bool"
+      },
+      {
+        "key": "system_hud",
+        "label": "系统音量与亮度提示",
+        "type": "bool"
+      },
+      {
+        "key": "bluetooth_notifications",
+        "label": "蓝牙连接通知",
+        "type": "bool"
+      },
+      {
+        "key": "wechat_notifications",
+        "label": "微信新消息提醒",
+        "type": "bool"
+      },
+      {
+        "key": "wecom_notifications",
+        "label": "企业微信提醒",
+        "type": "bool"
+      },
+      {
+        "key": "feishu_notifications",
+        "label": "飞书提醒",
+        "type": "bool"
+      },
+      {
+        "key": "dingtalk_notifications",
+        "label": "钉钉提醒",
+        "type": "bool"
+      },
+      {
+        "key": "wechat_tray_open",
+        "label": "从系统托盘唤起微信",
+        "type": "bool"
+      },
+      {
+        "key": "qq_only",
+        "label": "只接收 QQ 系统通知",
+        "type": "bool"
+      },
+      {
+        "key": "notification_preview",
+        "label": "显示通知正文",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "id": "mail",
+    "label": "邮箱账号",
+    "fields": [
+      {
+        "key": "mail_enabled",
+        "label": "监控邮箱",
+        "type": "bool"
+      },
+      {
+        "key": "mail_sync_operations",
+        "label": "同步标记已读和删除操作",
+        "type": "bool"
+      },
+      {
+        "key": "mail_code",
+        "label": "验证码高亮",
+        "type": "bool"
+      },
+      {
+        "key": "mail_code_hide_seconds",
+        "label": "验证码隐藏时间（秒）",
+        "type": "number",
+        "min": 15,
+        "max": 300
+      },
+      {
+        "key": "mail_interval",
+        "label": "检查间隔（秒）",
+        "type": "select",
+        "options": [
+          [
+            "60",
+            "60 秒"
+          ],
+          [
+            "120",
+            "120 秒"
+          ],
+          [
+            "300",
+            "300 秒"
+          ]
+        ]
+      },
+      {
+        "key": "mail_ics",
+        "label": "会议提前提醒（分钟）",
+        "type": "select",
+        "options": [
+          [
+            "5",
+            "5 分钟"
+          ],
+          [
+            "15",
+            "15 分钟"
+          ],
+          [
+            "30",
+            "30 分钟"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "calendar",
+    "label": "日历账号",
+    "fields": [
+      {
+        "key": "calendar_auto_sync",
+        "label": "每 5 分钟自动同步",
+        "type": "bool"
+      },
+      {
+        "key": "calendar_prompt",
+        "label": "显示日历接入提示",
+        "type": "bool"
+      }
+    ]
+  },
+  {
+    "id": "quota",
+    "label": "AI 额度",
+    "fields": []
+  },
+  {
+    "id": "weather",
+    "label": "天气",
+    "fields": []
+  }
+]

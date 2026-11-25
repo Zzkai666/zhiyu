@@ -1,0 +1,18 @@
+.codex-source{padding:12px;background:var(--hover,#f3ede3);border-radius:9px;overflow-wrap:anywhere;font-size:13px}.codex-source small{display:block;line-height:1.6}.codex-connection-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.codex-manual-note{font-size:12px;color:var(--muted)}
+.app-nav{overflow:hidden;min-height:0}.app-nav>nav{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin}.app-nav>.brand,.app-nav>.nav-search,.app-nav>.nav-bottom{flex-shrink:0}.app-nav>.nav-bottom{margin-top:15px}.brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
+.form .codex-manual-toggle{display:flex;flex-direction:row;align-items:center;gap:8px;font-size:13px}.form .codex-manual-toggle input{width:16px;height:16px;min-height:0;margin:0;flex:0 0 16px}
+.paper-row .paper-identity { position: relative; }
+.paper-entry-copy { min-width: 0; flex: 1; }
+.paper-row .paper-summary-button { width: 100%; text-align: left; padding: 0; }
+.paper-summary-button::after { content: ""; position: absolute; inset: 0; border-radius: 5px; }
+.paper-summary-button:focus-visible::after { outline: 2px solid var(--accent, #965837); outline-offset: 3px; }
+.paper-processing { position: relative; margin-top: 7px; color: var(--muted); font-size: 12px; }
+.paper-process-line { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 9px; min-width: 0; }
+.paper-process-label { font-weight: 600; color: var(--ink, inherit); }
+.paper-process-count { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.paper-processing progress { width: 92px; max-width: 100%; height: 4px; border: 0; border-radius: 4px; overflow: hidden; accent-color: #8f795f; }
+.paper-processing progress::-webkit-progress-bar { background: #ded3c6; }
+.paper-processing progress::-webkit-progress-value { background: #8f795f; }
+.paper-processing .paper-process-action { min-height: 26px; padding: 2px 5px; border-radius: 4px; font-size: inherit; font-weight: 600; color: var(--accent, #8d4b2f); white-space: nowrap; }
+.paper-processing .paper-process-action:hover { text-decoration: underline; background: var(--hover, #f2e9dd); }
+.paper-process-error { margin: 3px 0 0; color: var(--danger, #a44435); overflow-wrap: anywhere; }

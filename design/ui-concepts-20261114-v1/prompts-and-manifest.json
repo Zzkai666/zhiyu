@@ -1,0 +1,350 @@
+{
+  "createdAt": "2026-11-14",
+  "tool": "built-in image_gen__imagegen",
+  "status": "仅供设计审阅，正式0.7.2未修改",
+  "bases": {
+    "early": "Use case: ui-mockup. Generate ONE high-fidelity desktop application UI screenshot for ResearchDesk, Chinese personal research/study workbench, landscape 1440x960 proportions, crisp legible Simplified Chinese UI text. Entire frame is the application UI, flat front view, no laptop/device, no browser address bar, no exterior margin, no collage, no marketing landing page. This is a design concept, realistic fictional sample data, not a live application.\nShared design: warm research field journal, playful yet carefully usable. Warm ivory background #FAF6EF, oat sidebar #F0E7DA, warm charcoal text #423A32, burnt apricot primary #C77451, quiet sage #82917B, muted sky #90A6B0. Humanist sans serif Chinese typography, clear 30px headings, readable 15px body, aligned forms, delicate borders, 12-16px radii, generous but practical spacing. Restrained tactile paper index tabs, a small hand-drawn scientific/book motif, a single piece of translucent washi tape or pencilled annotation may give personality. No toy-like glossy 3D, no childish mascots, no giant decorative hero, no rainbow dashboard, no cold blue enterprise style, no excessive charts or decorative cards. Personality must serve the module. Consistent thin rounded outline icons, clear primary action. Do not cram every metric into stat cards.\nGlobal sidebar for ordinary workbench pages: width about 210px, top simple open-book line logo plus \"ResearchDesk\", a search field \"搜索工作台  ⌘ K\" (use Ctrl K on Windows preferably), grouped links 工作台: 今日工作台 / 任务日程 / 目标与项目; 阅读与研究: 文献库 / 实验记录; 学习与生活: 课程学习 / 生词与复习 / 运动与生活. Bottom links 设置 / 版本与帮助. No standalone notes module. Show the specified selected page. Keep sidebar and global styling identical throughout the collection. Any island widget shown uses original neutral light frosted glass, not warm recoloring. Date in sample is 2026年11月14日 周六.\nNo AI chat/Q&A, no notebook feature, no automatic sentence matching between languages, no training launch controls. AI only Codex translation. Treat new proposed capabilities as conceptual, never imply code was implemented.",
+    "regular": "Use case: ui-mockup. Generate ONE high-fidelity desktop application UI screenshot for ResearchDesk, Chinese personal research/study workbench, landscape 1440x960 proportions, crisp legible Simplified Chinese UI text. Entire frame is the application UI, flat front view, no laptop/device, no browser address bar, no exterior margin, no collage, no marketing landing page. This is a design concept, realistic fictional sample data, not a live application.\nShared design: warm research field journal, playful yet carefully usable. Warm ivory background #FAF6EF, oat sidebar #F0E7DA, warm charcoal text #423A32, burnt apricot primary #C77451, quiet sage #82917B, muted sky #90A6B0. Humanist sans serif Chinese typography, clear 30px headings, readable 15px body, aligned forms, delicate borders, 12-16px radii, generous but practical spacing. Restrained tactile paper index tabs, a small hand-drawn scientific/book motif, a single piece of translucent washi tape or pencilled annotation may give personality. No toy-like glossy 3D, no childish mascots, no giant decorative hero, no rainbow dashboard, no cold blue enterprise style, no excessive charts or decorative cards. Personality must serve the module. Consistent thin rounded outline icons, clear primary action. Do not cram every metric into stat cards.\nGlobal sidebar for ordinary workbench pages: width about 210px, top simple open-book line logo plus \"ResearchDesk\", a search field \"搜索工作台  Ctrl K\" (Windows, never use ⌘), grouped links 工作台: 今日工作台 / 任务日程 / 目标与项目; 阅读与研究: 文献库 / 实验记录; 学习与生活: 课程学习 / 生词与复习 / 运动与生活. Bottom links 设置 / 版本与帮助. No standalone notes module. Show the specified selected page. Keep sidebar and global styling identical throughout the collection. Any island widget shown uses original neutral light frosted glass, not warm recoloring. Date in sample is 2026年11月14日 周六.\nNo AI chat/Q&A, no notebook feature, no automatic sentence matching between languages, no training launch controls. AI only Codex translation. Treat new proposed capabilities as conceptual, never imply code was implemented.\nRender as a polished DIGITAL software interface. Paper motifs are light and selectively used, not a photograph of aged paper; the main text/control surfaces must be clean, crisp and modern. Avoid distressed/torn textures behind body text. Fun accents are small and useful; preserve a quiet, consistent warm app shell.",
+    "later": "Use case: ui-mockup. Generate ONE high-fidelity desktop application UI screenshot for ResearchDesk, Chinese personal research/study workbench, landscape 1440x960 proportions, crisp legible Simplified Chinese UI text. Entire frame is the application UI, flat front view, no laptop/device, no browser address bar, no exterior margin, no collage, no marketing landing page. This is a design concept, realistic fictional sample data, not a live application.\nShared design: warm research field journal, playful yet carefully usable. Warm ivory background #FAF6EF, oat sidebar #F0E7DA, warm charcoal text #423A32, burnt apricot primary #C77451, quiet sage #82917B, muted sky #90A6B0. Humanist sans serif Chinese typography, clear 30px headings, readable 15px body, aligned forms, delicate borders, 12-16px radii, generous but practical spacing. Restrained tactile paper index tabs, a small hand-drawn scientific/book motif, a single piece of translucent washi tape or pencilled annotation may give personality. No toy-like glossy 3D, no childish mascots, no giant decorative hero, no rainbow dashboard, no cold blue enterprise style, no excessive charts or decorative cards. Personality must serve the module. Consistent thin rounded outline icons, clear primary action. Do not cram every metric into stat cards.\nGlobal sidebar for ordinary workbench pages: width about 210px, top simple open-book line logo plus \"ResearchDesk\", a search field \"搜索工作台  Ctrl K\" (Windows, never use ⌘), grouped links 工作台: 今日工作台 / 任务日程 / 目标与项目; 阅读与研究: 文献库 / 实验记录; 学习与生活: 课程学习 / 生词与复习 / 运动与生活. Bottom links 设置 / 版本与帮助. No standalone notes module. Show the specified selected page. Keep sidebar and global styling identical throughout the collection. Any island widget shown uses original neutral light frosted glass, not warm recoloring. Date in sample is 2026年11月14日 周六.\nNo AI chat/Q&A, no notebook feature, no automatic sentence matching between languages, no training launch controls. AI only Codex translation. Treat new proposed capabilities as conceptual, never imply code was implemented.\nRender as a polished DIGITAL software interface. Paper motifs are light and selectively used, not a photograph of aged paper; the main text/control surfaces must be clean, crisp and modern. Avoid distressed/torn textures behind body text. Fun accents are small and useful; preserve a quiet, consistent warm app shell.\nFor settings screens: override the ordinary global sidebar entirely. Show ONLY the settings navigation specified in that screen. For reader screens: full-screen reader without global workbench sidebar, continuous VERTICAL PDF scrolling, history controls labeled exactly 后退 and 前进, never 上一页/下一页. No browser-like horizontal page flipping.",
+    "settings": "Edit the provided settings-screen image into another ResearchDesk settings subsection. The image is the EDIT TARGET and the shared shell reference. Preserve its single 245px settings sidebar exactly (all eleven entries and back button), its warm palette, typography, fine border treatment and overall 1440×960 proportions. Do not add the ordinary workbench navigation, do not add a second sidebar, do not invent cloud sync or chat. Change only the main settings content and the selected entry as specified. Island previews retain neutral ORIGINAL frosted glass. Make the main content fit cleanly without excessively dense fine print. The UI may show light paper/book motifs but controls must remain crisp, modern, usable. "
+  },
+  "pages": [
+    {
+      "id": "01-home",
+      "title": "今日工作台",
+      "file": "01-home-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-36b33775-940c-4337-a080-e5790aed6644.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-5ce6c3d4-e4bb-4e3e-a189-4ac76a998784.png",
+      "category": "工作台",
+      "description": "阅读接续、今天要做的事和重要日期同屏，像打开自己的研究手帐。",
+      "proposal": "本周回顾、课程接续可作为后续增量；首页不堆叠无意义统计。",
+      "initialBase": "early",
+      "spec": "Selected 今日工作台. Main heading \"今天，从这里开始\" with small date. Main left two-thirds: visually distinctive reading resume paper cover strip for \"Diffusion Policy\", saved \"第 8 / 19 页\", main \"继续阅读\", smaller \"打开文献库\". A large practical Today list below: \"今日待办\" 3 tasks, checkboxes, \"背单词 20 分钟\" repeat icon, \"完成矩阵理论作业\" deadline, \"阅读论文方法部分\"; inline add task. Right one-third: always visible two important dates: \"矩阵理论考试 11月18日 还有4天\", \"课程作业截止 12月5日 还有21天\". Quiet focus timer 25:00 \"开始专注\", choose task, small sage progress dots. Lower recent reading list 3 rows and \"今日复习 12 个词\" action. Fun: small marginal pencil-drawn book and sun, a bookmarked reading card with offset paper corner, task list looks like a useful journal, subtle orange line under heading. Preserve hierarchy, not many equal cards. Proposed optional \"今日一句\" must NOT be included.",
+      "refinement": {
+        "prompt": "Change ONLY the shortcut hint in the top-left search field from the Mac command-symbol shortcut into EXACT text Ctrl K, because this is a Windows desktop application. Preserve every other part of the image: layout, all copy, colors, paper detail, artwork, hierarchy and controls.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-5ce6c3d4-e4bb-4e3e-a189-4ac76a998784.png"
+      }
+    },
+    {
+      "id": "02-planner",
+      "title": "任务日程·每日清单",
+      "file": "02-planner.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-8b33db26-ccf8-4404-adad-7256bd894c30.png",
+      "category": "工作台",
+      "description": "日期索引卡常驻上方，今日清单与侧边详情让编辑更顺手。",
+      "proposal": "逐事项提前提醒、侧边编辑、月历定位是提案；任务仍可独立使用，不强制跨模块关联。",
+      "initialBase": "regular",
+      "spec": "Selected 任务日程. Header \"任务日程\", buttons \"记重要日期\" secondary, \"添加待办\" primary. This page must show BOTH distant important dates and today's tasks immediately without selecting a date. Full-width top horizontal important-dates index cards: Nov18矩阵理论考试(4天), Dec05作业截止(21天), Jan10期末考试(57天), month/day large but elegant and thin countdown stamps. Below 70% width \"今日待办\" 11月14日 周六, tabs 清单/重复安排/全部事项/回收站, easy inline add, 5 checkable rows with times and recurring icons. Narrow right quiet mini-month navigator and selected task detail sheet, NOT a calendar-only main view. Playful folded date tabs, restrained red/orange deadline underline, completion check mark. No task links to projects/courses required. No progress pie charts."
+    },
+    {
+      "id": "03-recurring",
+      "title": "任务日程·重复安排",
+      "file": "03-recurring.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-201d1e75-1790-4a16-a2a6-6105d5170786.png",
+      "category": "工作台",
+      "description": "用星期圆点表达重复节律，规则和具体某一天的完成分开看。",
+      "proposal": "周节律概览是新增呈现；保留现有重复规则、暂停和当天独立完成语义。",
+      "initialBase": "regular",
+      "spec": "Selected 任务日程. Title任务日程, tab 重复安排 selected beside 清单/全部事项/回收站. Main list of recurring rules like a weekly rhythm sheet: 每天背单词20分钟, 周一三五跑步, 每周日整理资料, with Mon-Sun small day circles, start date, no end date, enabled/paused status. Selected row opens a right detail drawer: \"编辑重复安排\", repeat每天/工作日/每周, weekday selectors, date range, \"暂停安排\", footer保存更改. Sidebar reminder important dates remains small. Fun: one continuous dotted weekly rhythm line and hand-circled weekday, not a habit game."
+    },
+    {
+      "id": "04-projects",
+      "title": "目标与项目·项目工作区",
+      "file": "04-projects.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-febd1718-14c9-444f-ac85-2030120aabf7.png",
+      "category": "工作台",
+      "description": "档案夹式项目工作区：下一步、任务、材料和目标各有位置。",
+      "proposal": "项目动态时间线、材料分组页签待实现；不把示例活动当作真实日志。",
+      "initialBase": "regular",
+      "spec": "Selected 目标与项目. Header and top tabs 项目/目标, 项目 selected, 新建项目 button. A slender project index list left inside content: VLA论文调研, 矩阵理论课程, 个人阅读计划, status and small color dot. Main selected \"VLA 论文调研\", natural-language purpose and date. Prominent next action \"比较三种策略的训练数据\" with start/open action; below two-column tasks checklist and linked papers with actual PDF miniature, plus connected goal with modest linear progress. Context right small pinned milestone strip and latest activity rows. Fun: project dossier with colored index tab, tiny hand-drawn branching concept motif, useful visible actions. No kanban columns full of empty cards. Do not add AI assistant."
+    },
+    {
+      "id": "05-goals",
+      "title": "目标与项目·目标进展",
+      "file": "05-goals.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-45443f66-887c-43de-828a-d06118758cfe.png",
+      "category": "工作台",
+      "description": "把里程碑变成一条可读的路线，进展有原因、有历史。",
+      "proposal": "路线可视化和证据附件入口待确认；三种进展方式及版本历史保持。",
+      "initialBase": "regular",
+      "spec": "Selected目标与项目, 目标 tab selected. Header \"给长期目标，一个看得见的进度\". Main selected goal \"本学期完成机器人学习方向调研\", deadline2026/12/31. Horizontal milestone trail with four clear steps and two completed, meaningful percent58%. Linked project list below, progress-history timeline with manually recorded evidence and update date. Slim left index of three goals; right \"记录这次进展\" editor with progress method 数值/里程碑/手动, value, reason, 保存进展 button. Fun: trail/map metaphor only in goal milestones, paper stamps for completed milestones, soft sage not gamified XP."
+    },
+    {
+      "id": "06-library",
+      "title": "文献库",
+      "file": "06-library.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-787d0496-38a2-46e1-8e83-05d981dbe72d.png",
+      "category": "阅读与研究",
+      "description": "文献列表保留浏览密度，右侧元数据面板方便整理。",
+      "proposal": "PDF封面、字母/主题整理、快速备注等需另行确认；文献条目和元数据功能保留。",
+      "initialBase": "regular",
+      "spec": "Selected文献库. Header \"文献库\" and main warm button 导入论文. Search, tabs全部/收藏/待读/阅读中/已读/回收站, small sort最近阅读 and view toggle. Main compact high-quality list with 5 papers, real-looking PDF cover thumbnail, title (Diffusion Policy; Vision-Language-Action Models for Robotics; Learning Transferable Visual Models), year, tags, favorite, subtle saved page progress. Right metadata inspector selected Diffusion Policy with title, authors, year2023, arXiv identifier, DOI optional blank, source URL, tags/status, 打开阅读. Fun: archival index cards and discreet paper color-coded edges, restrained tiny library shelf line illustration only in header. More real content than decorative charts. No Zotero/EndNote active import."
+    },
+    {
+      "id": "07-bilingual",
+      "title": "论文阅读·双语对照",
+      "file": "07-bilingual-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c2c0d647-20ab-4e57-ac5d-09090d3d2ee0.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-802a13ad-15f6-4263-8e38-04ab1059cee8.png",
+      "category": "阅读与研究",
+      "description": "原文译文默认各半，可拖分隔条；对应段落铺色，分片提示靠近译文。",
+      "proposal": "沿用现有段落定位，不恢复句子匹配；历史按钮为后退/前进，PDF仍连续纵向滚动。",
+      "initialBase": "regular",
+      "spec": "Full-screen dedicated reader, replace global sidebar with slim reader header \"← 返回文献库\" / \"Diffusion Policy\", view tabs原文/双语对照, swap position icon, text settings, annotation sidebar toggle, export menu. Next toolbar page8/19 zoom125%, select/highlight/underline and color swatches always accessible. Split main area EXACTLY 50% original PDF and50% translated text, a draggable vertical divider. Left crisp actual-looking academic paper with English paragraph text and one robotics figure; right continuous Chinese academic translation, indented body paragraphs with comfortable compact spacing and section heading \"3. 方法\". One selected source paragraph and translated paragraph have matching pale bright mint full-area tint and thin mint border. Small \"原文1 原文2\" chips attached to selected translated paragraph, not floating top. Floating back/forward pill near BOTTOM of original pane. Translation never hidden behind auxiliary sidebar. Optional slim collapsed notes/annotation rail at far right; no separate notebook, no chat, no sentence-to-sentence matching. Calm reader; warm only chrome, paper near-white. Fun minimal bookmark tab, no decoration on document.",
+      "refinement": {
+        "prompt": "Edit only the bottom floating reading-history control on this UI image. Replace the label \"上一页\" with EXACT Chinese \"后退\", and replace \"下一页\" with EXACT Chinese \"前进\". Preserve the arrows and the floating pill position under the left original PDF pane. These are browsing-history controls, not horizontal page flipping. Keep EVERYTHING ELSE identical: full-screen reader, 50/50 original/translation panes, all paper content, colors, header, toolbars, selected mint paragraphs, source chips. Do not add any sidebar, illustration, annotation, or page controls.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-802a13ad-15f6-4263-8e38-04ab1059cee8.png"
+      }
+    },
+    {
+      "id": "08-original",
+      "title": "论文阅读·原文与批注",
+      "file": "08-original-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-ccf420ce-08fc-4a43-a6bf-e6ea1ce93bcf.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-47cd9314-1e26-41fe-aba5-4ff43f98d84e.png",
+      "category": "阅读与研究",
+      "description": "专注原文，标注工具常驻，评论靠近选区，侧栏收纳批注。",
+      "proposal": "以现有六类标注为基础；阅读时不常驻解析框，不恢复独立笔记模块。",
+      "initialBase": "regular",
+      "spec": "Dedicated full-screen PDF reader, no global app sidebar. Header title Diffusion Policy, 原文 active / 双语对照, export, right toggles. PDF vertical scroll, page8/19, zoom125%, permanent selection/highlight/underline/color tools. Large crisp white original page centered on warm gray canvas. A few highlighted lines, a small nearby annotation popover anchored to selection with 8 colored squares, highlight/underline/text/note/area/drawing icons, comment field \"添加评论\", three-dot menu at upper right. Right auxiliary annotation sidebar with page-grouped quotes and comments, selected matching color. Floating history backward/forward at original bottom. No parse boxes during normal post-translation reading. Fun is tactile bookmark corners and color, never stickers covering text.",
+      "refinement": {
+        "prompt": "Remove the entire ordinary ResearchDesk WORKBENCH navigation sidebar on the far left. This is a FULL-WINDOW dedicated PDF reader. Expand the original PDF canvas into the freed space, keeping the annotation sidebar on the right at about 310px. Keep all reader top toolbar, original/双语 tabs, PDF text selection, nearby annotation popover with comment and three-dot menu, annotation cards and warm chrome. No workbench app navigation. Keep continuous VERTICAL PDF scrolling and history arrows in a small floating bottom control labeled 后退 and 前进. Do not add horizontal flipping or parse boxes. Preserve all other visual design details.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-47cd9314-1e26-41fe-aba5-4ff43f98d84e.png"
+      }
+    },
+    {
+      "id": "09-parse",
+      "title": "论文解析核对",
+      "file": "09-parse.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-278aee7f-0981-4f0e-9050-9b6e1bdab20e.png",
+      "category": "阅读与研究",
+      "description": "将不确定项变成逐项判断的核对清单，点击就能定位。",
+      "proposal": "沿用现有分类纠正、多块连接和Codex批量翻译；不提供解析引擎选择，不还原表格文本。",
+      "initialBase": "regular",
+      "spec": "Dedicated full-screen reader in \"翻译准备\" context, no global sidebar. Left about68% shows crisp first PDF page \"Vision-Language-Action Models for Robotics\", title/author/abstract/body/figure bounded by thin category colored boxes with translucent very light fill, labels INSIDE bottom-right \"题目 需翻译\", \"作者 不翻译\", \"正文 需翻译\", \"图 截图\". Right32% \"核对解析\" panel, progress \"待核对 5 项\". Current uncertainty \"这一段可能在右栏继续\", side-by-side two excerpt cards numbered1/2, buttons \"连接这些区块\" / \"保持分开\"; source page buttons and next uncertainty navigation. Support selected3 segments (multi-merge) with small group chips. Clear \"一键全文翻译\" action after review and Codex model/思考强度 compact section. Fun: research proofing desk, small pencil check marks, warm correctable form. No MinerU engine selection, no table text extraction, no chat."
+    },
+    {
+      "id": "10-lab",
+      "title": "实验记录",
+      "file": "10-lab.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-ac73cd20-ba98-4679-8da9-6fc500dfde88.png",
+      "category": "阅读与研究",
+      "description": "实验档案和指标对照表结合，失败与未完成状态清楚。",
+      "proposal": "实验分组索引、常驻对照区为提案；只手工登记，不新增训练执行。",
+      "initialBase": "regular",
+      "spec": "Selected实验记录. Header experiment \"VLA 数据规模对性能的影响\", purpose sentence. Narrow experiment index inside content. Main area tab运行记录/指标对比,运行记录 selected with 4 rich aligned table rows showing Run A/B/C/D, condition data size, date, 已结束/失败/未完成. Checkbox2 selected, 比较2次运行 and 登记运行 buttons. Lower compact comparison table visible for two selected runs: same-unit success rate%, elapsed min and delta, baseline indicator, failure never shown as zero. Right detail inset with condition text, metrics, \"复用条件\" action. Fun: graph-paper margin, restrained lab notebook tab and pencil annotated baseline, not decorative fake scientific plots. Manual logs only, no launch training/remote machines."
+    },
+    {
+      "id": "11-courses",
+      "title": "课程学习",
+      "file": "11-courses-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-7d37e25a-87ab-4384-8ca8-ea8419ad0ade.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c6e3806d-85e1-4ccc-aa53-c159b81b1236.png",
+      "category": "学习与生活",
+      "description": "章节路线表现学习位置，材料与实际记录放在一起。",
+      "proposal": "章节地图、周学习统计待实现；所有章节自由打开，不做强制解锁。",
+      "initialBase": "regular",
+      "spec": "Selected课程学习. Header \"课程学习\", 新建课程. Left inner navigation course list 矩阵理论/机器人学/机器学习. Selected矩阵理论 center top next chapter \"继续第4章 · 奇异值分解\" + saved教材第86页 +继续学习. Main chapter sequence as a gently curved or stepped line with numbered chapter rows (four steps, first3 checked); each row readable and actionable, progress3/8. Right current chapter detail: linked textbook/PDF, brief chapter description, record actual studied minutes, mark chapter complete, recent study record. Bottom mini week effort bars (proposed local stats). Fun: course map with tiny handwritten \"到这里了\" pointer and paper bookmark; avoid childish adventure art, no AI tutor or notes module.",
+      "refinement": {
+        "prompt": "Change ONLY the small LOCK icons beside the last three not-yet-studied chapters into small OPEN-BOOK outline icons. Every chapter is freely accessible; not-yet-studied does not mean locked. Preserve all text, chapter route, styles, layout, statistics, colors and controls. Do not change any other element.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c6e3806d-85e1-4ccc-aa53-c159b81b1236.png"
+      }
+    },
+    {
+      "id": "12-vocabulary",
+      "title": "生词与复习·词库",
+      "file": "12-vocabulary.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c51c216e-8877-4448-9033-86dee98aa475.png",
+      "category": "学习与生活",
+      "description": "词库像一组词典索引卡，释义、语境、原文来源相邻。",
+      "proposal": "字母索引、发音、熟悉度可视化为提案；保留固定来源与原文返回。",
+      "initialBase": "regular",
+      "spec": "Selected生词与复习. Header \"把读到的词，慢慢变熟\", primary \"开始复习 · 12\". Top tabs词库/待复习/已掌握, search and tag filter. Main compact word list: embodiment, generalization, trajectory, manipulation, each pronunciation optional, concise Chinese meaning, saved paper source/page, next review day, small familiarity indicator. Right selected word detail on tasteful dictionary index card, original academic source sentence with highlighted word, sourceDiffusion Policy第8页, \"返回原文\" link and edit field. Fun: library card tabs A-Z edge and one neat handwritten underline, no cartoon huge flashcard hiding list, no AI generation controls."
+    },
+    {
+      "id": "13-review",
+      "title": "生词与复习·专注复习",
+      "file": "13-review.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-6d3fb4d3-b2eb-469f-a5a6-9412200dd26d.png",
+      "category": "学习与生活",
+      "description": "纸质词卡与轻量反馈让复习有节奏，评分键清楚。",
+      "proposal": "翻卡、印章与会话概览为交互提案；掌握反馈只能在真实评分后出现，调度以业务规则为准。",
+      "initialBase": "regular",
+      "spec": "Selected生词与复习 but focus reading mode with narrow sidebar muted. Header \"今日复习\" progress5/12 and close. Center one substantial but not giant paper flashcard \"embodiment\" with phonetic, subtle warm accent, original sentence source just below. Card revealed state shows Chinese释义\"具身；具体体现\", short academic context, source paper link. Bottom large balanced controls \"忘记了\" \"有些模糊\" \"记住了\" with keyboard1/2/3 and next-review hints. Right small session stack listing 3 upcoming words, progress, pause/finish. Fun layered real paper deck, small flip corner, completed card stamp; no confetti, XP or punitive streaks."
+    },
+    {
+      "id": "14-life",
+      "title": "运动与生活",
+      "file": "14-life.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-38834d26-0fb6-4565-b06c-4a6b1e802af6.png",
+      "category": "学习与生活",
+      "description": "饮水瓶与每周节律带来轻松感，运动记录仍是主角。",
+      "proposal": "完整常用活动模板、每周节律图待确认；现有记录名称复用与饮水增减保持。",
+      "initialBase": "later",
+      "spec": "Selected运动与生活. Header \"照顾好身体，也是一种进展\", primary记录活动. Asymmetric top: useful hydration strip showing 2/4瓶 and +记一瓶 /撤销, four bottle outlines, light sage; next modest weekly training overview 3天/4次/165分钟 with a seven-day rhythm chart. Main readable activity log rows: 轻松跑5km35min, 上肢力量45min, 晚间拉伸15min, date/time. Tabs全部/习惯/有氧/力量/回收站. Right drawer selected力量 entry shows actual date,duration,description and保存; small favorite repeat-last activity shortcut. Fun one tiny hand-drawn shoe and water wave, warm athletic notebook, not a fitness marketing screen or giant rings. No medical claims."
+    },
+    {
+      "id": "15-import",
+      "title": "导入论文",
+      "file": "15-import-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-93b03a80-0c9c-421b-8540-6b44afd029a0.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-1d183cbc-4f7f-4754-a127-d6f511cf2e4d.png",
+      "category": "阅读与研究",
+      "description": "导入窗口突出编号/链接与本地PDF两条入口，队列就地可见。",
+      "proposal": "只显示真实处理状态，不编造百分比；Zotero/EndNote仍是后续支持。",
+      "initialBase": "later",
+      "spec": "Selected文献库 in lightly dimmed full app background. One centered polished modal \"导入论文\" about600px wide. Input label arXiv编号、DOI、论文链接或完整标题, example2401.01234, warm导入 button; thin separator或; broad large dropzone with paperclip/book line icon, \"选择 PDF 文件\" and \"或拖入多份 PDF\". Lower small queue showing one successful samplePDF and one正在导入 with honest status. Zotero/EndNote disabled small footer \"后续支持\", not active buttons. On the right of modal a single metadata verification excerpt may be omitted to avoid crowding. Fun index-card modal with tiny paper corner, warm border, keyboard-friendly clear focus ring, no decorative giant upload illustration.",
+      "refinement": {
+        "prompt": "Change ONLY the status text of the second import queue item from the percentage-based 正在导入…(72%) into EXACT text 正在导入，请稍候. Remove the percentage entirely. Keep the small indeterminate spinner. Do not add progress percentages or invented completion estimates. Preserve all other modal content and background pixel layout, icons, styling and text.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-1d183cbc-4f7f-4754-a127-d6f511cf2e4d.png"
+      }
+    },
+    {
+      "id": "16-settings-general",
+      "title": "设置·常规",
+      "file": "16-settings-general.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe28e4c6-9960-4c02-bdf9-59774d3c772d.png",
+      "category": "设置",
+      "description": "普通设置与小岛开关清楚分组，桌面示意解释两个窗口的关系。",
+      "proposal": "主题、字号密度和目录入口是提案；目录迁移不能仅按图中一个按钮直接实现。",
+      "initialBase": "later",
+      "spec": "Settings page replace global sidebar with settings-specific navigation. Header ←返回工作台 /设置. Left nav fixed: 工作台 section 常规(SELECTED), 阅读; 桌面小岛 section 外观与停靠, 页面与状态组件, 音乐与歌词, 专注与饮水, 通知, 邮箱账号, 日历账号, AI额度, 天气. Bottom 版本与帮助 link. Main标题常规 subtitle\"让工作台按你的习惯工作\". Plain elegant grouped rows, not all cards: 启用桌面小岛 toggleON, 关闭工作台后小岛继续运行 toggleON, 重启小岛 button; 本地数据目录 with browse action; optional proposed theme暖砂/浅色 small swatches and readable font density设置 labelled designproposal by manifest only. Right small desktop composition sketch of neutral LIGHT FROSTED island above warm workbench, installed badge. Fun a tiny pinned settings index label, restrained. Clear保存更改 bottom bar only when changed, discard."
+    },
+    {
+      "id": "17-settings-reading",
+      "title": "设置·阅读",
+      "file": "17-settings-reading-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-f2b7bf2d-4111-4102-a185-0e3ff7a8e371.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-6a0799f7-9618-4e0d-8f88-4e2a83fa8e20.png",
+      "category": "设置",
+      "description": "颜色控制旁给真实段落效果预览，译文字体设置集中可见。",
+      "proposal": "字体选项归并是布局建议；颜色只给对应段落铺色，原文句子提示不做跨语言匹配，数值遵循现有范围。",
+      "initialBase": "later",
+      "spec": "Same settings nav as other settings pages, 阅读 selected. Main阅读设置. Strong two-column design: leftcontrols对应框颜色 with6accessible swatches, opacity slider18%, 原文句子提示 swatches/opacity, translated font宋体 /字号18 /行距1.65 /首行缩进ON (font controls existing reader presented consolidated proposed). Right LIVE preview of English source paragraph and Chinese paragraph with matching full-area mint tint and readable text, one pale sentence hint on original. Buttons恢复默认. This is read UI setting, NO cross-language sentence matching. Fun margin bookmark and small aa typography sample, calm editorial layout, no huge empty boxes.",
+      "refinement": {
+        "prompt": "Edit the provided settings-screen image into another ResearchDesk settings subsection. The image is the EDIT TARGET and the shared shell reference. Preserve its single 245px settings sidebar exactly (all eleven entries and back button), its warm palette, typography, fine border treatment and overall 1440×960 proportions. Do not add the ordinary workbench navigation, do not add a second sidebar, do not invent cloud sync or chat. Change only the main settings content and the selected entry as specified. Island previews retain neutral ORIGINAL frosted glass. Make the main content fit cleanly without excessively dense fine print. The UI may show light paper/book motifs but controls must remain crisp, modern, usable. \nChange main content to 阅读 settings, select 阅读 in the existing settings-only sidebar. Two-column controls/live preview. Controls EXACT labels: \"对应框颜色\", six swatches, \"对应框填色深浅\" 18%; \"原文句子提示颜色\", swatches and opacity; \"译文字体\" 宋体, 字号18, 行距1.65, 首行缩进ON. RIGHT preview has WHITE PAPER with an English source paragraph and Chinese translation paragraph, EACH individually bounded and filled pale mint; the REST of the white preview remains white. Only the matched paragraphs receive mint, NOT the entire reading pane. Add one faint sentence highlight on source only. NO cross-language sentence matching. NO global workbench nav. NO backup/cloud/translation nav sections. Keep all eleven settings entries exactly as reference. Keep warm style and quiet book/paper motifs.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe28e4c6-9960-4c02-bdf9-59774d3c772d.png"
+      }
+    },
+    {
+      "id": "18-settings-island",
+      "title": "设置·小岛外观与停靠",
+      "file": "18-settings-island.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-d7509d13-015a-4fe8-ae00-955188ef4e14.png",
+      "category": "设置",
+      "description": "五种原主题并列预览，停靠位置在屏幕示意里更直观。",
+      "proposal": "位置示意和即时预览为新呈现；保留小岛原皮肤、材质与已有用户选择。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 外观与停靠 selected. Heading \"小岛，放在顺手的位置\". Five compact theme previews ORIGINAL skins: 经典黑, 奶油, 毛玻璃·浅 SELECTED, 毛玻璃·深, 悬浮云. Island preview must be neutral translucent original style, NOT terracotta warm. On right small monitor placement diagram dock top center, guide by draggable dot concept. Actual rows形状刘海/胶囊,停靠位置顶部,显示屏主显示器,岛体大小100% slider,背景模糊ON,全屏时隐藏ON,开机启动OFF. Bottom savechanges bar. Fun changing clothes metaphor only small hanger icon, five preview miniatures tactile, professional and legible. Warm WORKBENCH settings chrome, island itself original color."
+    },
+    {
+      "id": "19-settings-pages",
+      "title": "设置·页面与状态组件",
+      "file": "19-settings-pages.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-8d132808-4714-4307-afcb-487e03bb1d25.png",
+      "category": "设置",
+      "description": "像搭积木一样组织常驻组件，功能开关与排序一眼看懂。",
+      "proposal": "拖放预览表现需实现；保留页面开关、顺序和关闭模块的后台行为。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 页面与状态组件 selected. Main title \"把常用的，留在岛上\". Top large actual neutral light frosted island resident bar preview with battery clock18:17 quota music focus icons, one icon dragging outline. Below resident component reorder rows 电量/时钟/AI额度/音乐/专注/吉祥物 with handles and toggle. Next functional pages two-column list 音乐、专注、饮水、置物架、待办、邮箱、AI额度、日历、天气 with checkbox/on states and drag handles. Right mini explanation \"关闭后停止后台同步，已有数据保留\". Save changes bottom. Fun magnetic modular icon chips in preview only, functional rows accurate, no futuristic neon."
+    },
+    {
+      "id": "20-settings-music",
+      "title": "设置·音乐与歌词",
+      "file": "20-settings-music.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-0d073dc6-5235-4997-b16a-3e27aa3383be.png",
+      "category": "设置",
+      "description": "把歌词延迟变成能看懂的时间对比，音乐页保持轻量。",
+      "proposal": "延迟预览、输出设备入口为提案；不新增流媒体音乐服务。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 音乐与歌词 selected. Main \"让音乐安静地陪着你\". One neutral frosted island preview with songtitle\"晴天\" and restrained waveform/lyrics line, original colors. Below useful settings rows 同步歌词ON,收起时显示歌词ON,歌词时间调整 -350毫秒 with slider and -/+ fine adjustment. Right small preview timing comparison of two lyric lines, disabled audio device optionalnoextraUI. Header tiny hand-drawn headphone icon and one sage music accent, warm page, typography clear. No music streaming marketplace, no album art dominating, no nonexistent cloud account."
+    },
+    {
+      "id": "21-settings-health",
+      "title": "设置·专注与饮水",
+      "file": "21-settings-health.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-c037e8be-8d54-4874-83a0-b1d6a3afe294.png",
+      "category": "设置",
+      "description": "专注与饮水设置配一条提醒时间线，时间和单位清楚。",
+      "proposal": "当日提醒预览为提案；实际提醒时段、午休与声音仍以原设置逻辑为准。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 专注与饮水 selected. Main split sections with segmented专注/饮水与久坐, both summary visible. Focus timer control25min focus/5min rest, sober tomato outline, soundtoggle. Water goal2000ml, serving250ml, remind45min, start9:00 end22:00, lunch休息12:00-13:30. Sedentary reminder60min toggle. Right neutral frosted island preview showing25:00, small daily reminder timetable with quiet break marks. Fun a small timer doodle and pencil tick marks around scale, no huge red stopwatch, clear forms and units, save footer."
+    },
+    {
+      "id": "22-settings-notifications",
+      "title": "设置·通知",
+      "file": "22-settings-notifications.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-f5a8574a-924d-4cca-bb27-2ee358c785cc.png",
+      "category": "设置",
+      "description": "通知开关旁给中性摘要预览，不用真实消息装饰界面。",
+      "proposal": "图中说明文案后续需校正：音量/亮度只显示系统提示，不自动调节；蓝牙仅连接提示，不向设备转发消息。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 通知 selected. Main \"只让重要的消息打断你\". Top system notification connection status 已连接 and断开 button. Groupedswitch rows提醒总开关ON,提醒声音OFF,系统音量与亮度ON,蓝牙连接ON,显示通知正文OFF. Below per-app compactlist微信/企业微信/飞书/钉钉/QQ with icons, toggles and privacyhelp. Right neutral frosted island notification preview with generic安全摘要 and no personal content. Fun a tiny paper bell cutout in header, no huge alert colors, privacy explicit, settings warm consistent."
+    },
+    {
+      "id": "23-settings-mail",
+      "title": "设置·邮箱账号",
+      "file": "23-settings-mail.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-9a4d9c4c-2d5a-4383-bd76-be16643aaf31.png",
+      "category": "设置",
+      "description": "邮箱连接表单像清楚的信封档案，授权引导靠近输入。",
+      "proposal": "沿用现有账号服务与系统凭据；图中账号为示例，没有连接真实邮箱。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 邮箱账号 selected. Main heading邮箱账号. Left connected account row\"research@example.com\" providerQQ status已连接, enabledtoggle, test andellipsis. Below添加邮箱 clear form providerQQ邮箱/Gmail/Outlook/自定义IMAP, email, authorizationpassword obscured, advancedsettings collapsed host/port993, buttons测试连接 secondary/保存并监控primary. Top help \"使用邮箱授权码，不是登录密码\" and获取授权码 link. Right small envelope-shaped paper inset with验证码高亮ON,检查间隔120秒,会议提醒15分钟,同步已读与删除OFF. Fun subtle envelope flap boundary but actual editable form readable, no full mailbox inbox UI, no real credentials."
+    },
+    {
+      "id": "24-settings-calendar",
+      "title": "设置·日历账号",
+      "file": "24-settings-calendar.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe741b2d-5214-4c36-b50d-036d9a6b52ea.png",
+      "category": "设置",
+      "description": "日历账号连接与外部事件预览同屏，接入状态更好理解。",
+      "proposal": "事件预览为提案；不强制把外部日历与独立任务日程绑定。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 日历账号 selected. Main日历账号 and calm mini calendar illustration showingNov18 exam. Connected account provider飞书 row, last sync时间, sync/disconnect. Main clear添加日历 form provider飞书/iCloud/自定义CalDAV, username,専用密码obscured, conditional serverhttps address, guide accordion,连接并保存button. Lower导入.ics文件 secondary, 每5分钟自动同步ON,显示接入提示ON. Right small upcoming2events preview, not full task schedule replacement; this is externalcalendar connection settings, not taskdaylinks. Fun layered calendar tear-off icon, warm accents minimal. No OAuth successful claims on placeholderaccount."
+    },
+    {
+      "id": "25-settings-quota",
+      "title": "设置·AI额度",
+      "file": "25-settings-quota.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-490d4e25-bcb0-4fa4-a7ec-87fff64990c0.png",
+      "category": "设置",
+      "description": "额度用简洁刻度和原生小岛预览表达，避免财务仪表盘感。",
+      "proposal": "只管理额度连接与监看，不增加AI聊天或其他生成场景；本机账号发现仍由用户主动点击。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, AI额度 selected. Main AI额度, subtitle \"查看已有账号的剩余额度\". A selected Codex account row alias科研账号, status已连接, two restrained progress bars 5小时68% 周额度42%, refresh/pin/menu. Other tiny providerrows Claude/DeepSeek status未连接. Below 添加额度账号 form 服务Codex dropdown,连接方式导入JSON/读取本机,选择文件 button/path,别名,验证并连接, optionaldiscover local accounts explicit button. A settings row在小岛显示额度ON. Right neutral frosted original island quota preview. Fun index-card meter rulers, avoid finance dashboard and artificial spend charts. This is quota monitoring connections, AI workbench remains translation-only, no chat."
+    },
+    {
+      "id": "26-settings-weather",
+      "title": "设置·天气",
+      "file": "26-settings-weather.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-397a0aa3-53f6-4c1a-8d82-9799d29b1b70.png",
+      "category": "设置",
+      "description": "城市选择与天气预览并排，太阳和云朵提供轻量趣味。",
+      "proposal": "工作台内预览需实现；定位和联网保持显式操作，示例天气不是真实预报。",
+      "initialBase": "settings",
+      "spec": "Same settings nav, 天气 selected. Main \"抬头看看，今天的天气\". Weather city selector搜索城市, current杭州 已保存, useauto location explicitoffbutton; savedcities杭州/上海/北京 withselectanddelete. Neutral frosted island weatherpreview晴18°C inright, tiny7day forecast strip below onlypreview. Main rows天气页启用ON,切换城市action,刷新天气. Fun one soft flat sun/cloud line motif, fine dotted isobar decorative corner only, preservepracticalsettings notweatherlandingpage, no travelrecommendations.",
+      "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-fe28e4c6-9960-4c02-bdf9-59774d3c772d.png"
+    },
+    {
+      "id": "27-help",
+      "title": "版本与帮助",
+      "file": "27-help-v2.png",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-d1241fa0-6600-482f-9ba9-030d929d9f60.png",
+      "previousDraft": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-e0e2b53a-d5ff-4e3b-ba88-4c2431f3a9b0.png",
+      "category": "帮助",
+      "description": "入门路径、组件状态、反馈和开源致谢各有清楚入口。",
+      "proposal": "诊断复制、组件检查和帮助引导需按实际能力落实；不新增自动上传或宣称自动更新已交付。",
+      "initialBase": "later",
+      "spec": "Global workbenchsidebar as ordinary pages, bottom版本与帮助 selected. Main title版本与帮助. Compact brand header ResearchDesk Next version0.7.2 concept UI only, friendly open-book line emblem with a tiny paper bookmark. Sections \"快速上手\" withthree concise rowlinks导入第一篇论文/核对后全文翻译/管理每日待办, eachsmallillustrationicon. Right \"本机状态\" list 本地数据/解析组件/桌面小岛 已安装 optionalstatus; checkupdates is planned notprimary fakeinstalled. Lower \"开源与许可\" Daozai/MIT credits andthird-party notices, \"反馈问题\" with复制诊断信息 and帮助文档, explicit no automaticupload. Fun a small stamp-style\"慢慢来，也在前进\" footerquiet notgiantposter. Do not show fabricated productionservice uptime or functionalcloudsync.",
+      "refinement": {
+        "prompt": "Change ONLY the content in the 开源与许可 panel. Project/component line must read 第三方组件：Daozai. License line must read 许可：MIT License（Daozai）. Supporting description: 第三方组件许可与致谢，详见许可清单。. Keep the 第三方组件与许可说明 link. Do not assign an overall license to ResearchDesk itself. Preserve all other page content, styling, warm colors, layout, typography and illustration.",
+        "reference": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-e0e2b53a-d5ff-4e3b-ba88-4c2431f3a9b0.png"
+      }
+    }
+  ],
+  "references": {
+    "note": "设置变体使用此图作为共同编辑参照；refinement列出局部修正提示与原图。",
+    "settingsFramework": "16-settings-general.png"
+  }
+}

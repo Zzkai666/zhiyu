@@ -1,0 +1,112 @@
+import {_electron as electron} from 'playwright';
+import assert from 'node:assert/strict';
+import {mkdir,mkdtemp,readFile,writeFile} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+const output=resolve(process.env.RDNEXT_BATCH_RESULTS||'test-results/reader-0.3.3');
+await mkdir(output,{recursive:true});
+const root=await mkdtemp(join(output,'isolated-batches-')),events=join(root,'codex-events.jsonl');
+let app,page;
+const errors=[];
+const exe=process.env.RDNEXT_EXE;
+async function launch(){
+ app=await electron.launch({args:[...(exe?[]:['.']),'--workspace='+join(root,'workspace')],...(exe?{executablePath:exe}:{}),
+ env:{...process.env,RDNEXT_CODEX:resolve('dist/bin/rdnext-test-codex.exe'),RDNEXT_CODEX_EVENTS:events,RDNEXT_CODEX_DELAY_MS:'250'}});
+ page=await app.firstWindow();page.on('pageerror',e=>errors.push(e.message));
+ await page.getByRole('heading',{name:'今日工作台'}).waitFor();await page.evaluate(()=>localStorage.setItem('rdnext.metadata.disabled','true'));
+}
+const call=(path,method='GET',payload)=>page.evaluate(async({path,method,payload})=>{
+ const r=await fetch('/api'+path,{method,...(payload===undefined?{}:{headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})});
+ const data=await r.json();if(!r.ok)throw Error(JSON.stringify(data));return data;
+},{path,method,payload});
+const trace=async()=>{try{return (await readFile(events,'utf8')).trim().split('\n').filter(Boolean).map(line=>JSON.parse(line))}catch{return []}};
+async function waitUntil(fn,message,timeout=30000){const start=Date.now();while(Date.now()-start<timeout){if(await fn())return;await new Promise(r=>setTimeout(r,100))}throw Error(message)}
+try{
+ await launch();
+ await app.evaluate(({dialog},file)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[file]})},resolve('test-results/reader-0.2.1/2510.07077v1.pdf'));
+ await page.getByRole('button',{name:'导入 PDF',exact:true}).click();await page.getByRole('button',{name:'选择 PDF 文件'}).click();await page.getByRole('button',{name:'完成',exact:true}).click();
+ const [paper]=await call('/papers'),base='/papers/'+paper.id;
+ const regions=JSON.parse(await readFile('tests/fixtures/vla-legacy-regions.json','utf8'));
+ for(let n=1;n<=38;n++)await call(base+'/reading/pages/'+n,'PUT',regions.filter(r=>r.page===n));
+ await page.evaluate(()=>{localStorage.setItem('rdnext.translation.model','fixture-model');localStorage.setItem('rdnext.translation.effort','medium')});
+ if(await page.getByRole('button',{name:'阅读',exact:true}).count())await page.getByRole('button',{name:'阅读',exact:true}).click();else await page.getByRole('button',{name:'打开论文',exact:true}).click();
+ await page.getByText('38 / 38 页',{exact:true}).waitFor();
+ await waitUntil(async()=>!(await page.getByRole('button',{name:'连接区块',exact:true}).isDisabled()),'line metadata did not finish',60000);
+ assert.ok(await page.locator('.source-region').count()>0,'first import must show preparation');
+ await page.getByRole('button',{name:/^核对解析/}).click();
+ page.on('dialog',dialog=>dialog.accept());
+ if((await call(base+'/reading')).review.length)await page.getByRole('button',{name:'保留其余划分',exact:true}).click();
+ await page.getByRole('button',{name:'翻译全文',exact:true}).waitFor();
+ const before=(await call(base+'/reading')).groups.filter(g=>g.translate&&!g.translation).length;
+ await page.getByRole('button',{name:'翻译全文',exact:true}).click();
+ await waitUntil(async()=>((await call(base+'/reading')).groups.filter(g=>g.translation).length)>=10,'first batch did not save');
+ await page.getByRole('button',{name:'停止翻译',exact:true}).click();
+ await page.getByRole('button',{name:'翻译设置与操作',exact:true}).click();
+ await page.getByRole('button',{name:'翻译全文',exact:true}).waitFor();
+ let partial=await call(base+'/reading');
+ const saved=partial.groups.filter(g=>g.translation);
+ assert.ok(saved.length>=10&&saved.length<before,'stop must preserve only committed batches');
+ const firstEvents=await trace(),firstTurns=firstEvents.filter(e=>e.method==='turn/start');
+ const firstPids=new Set(firstTurns.map(e=>e.pid));
+ assert.equal(firstPids.size,1,'one connection per job');
+ assert.ok(firstTurns.some(e=>JSON.parse(e.params.input[0].text).targets.length>6),'did not use larger batches');
+ assert.equal(await page.locator('.source-region').count(),0,'parsing frames leaked into reading');
+ assert.ok(await page.locator('.translation-article h1').count()>0,'semantic title absent');
+ assert.equal(await page.locator('.reading-content .region-card').count(),0,'translation still uses region cards');
+ await waitUntil(async()=>{
+  const result=await page.evaluate(async({base,revision,id})=>{const r=await fetch('/api'+base+'/reading/translate-batches',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scope:'one',group:id,revision,model:'fixture-model',effort:'medium'})});if(r.status===409)return false;return (await r.text()).includes('"kind":"done"')},{base,revision:partial.revision,id:saved[0].id});
+  return result;
+ },'cancel did not release owned Codex connection',10000);
+ await page.getByRole('button',{name:'翻译全文',exact:true}).click();
+ await waitUntil(async()=>(await call(base+'/reading')).groups.every(g=>!g.translate||g.translation),'full batch translation did not finish',120000);
+ const final=await call(base+'/reading');
+ assert.equal(final.groups.filter(g=>g.translate&&!g.translation).length,0);
+ for(const g of saved)assert.equal(final.groups.find(x=>x.id===g.id).translation,g.translation,'resume replaced a saved paragraph');
+ const allEvents=await trace();
+ const targetIDs=allEvents.filter(e=>e.method==='turn/start'&&!firstPids.has(e.pid)).flatMap(e=>JSON.parse(e.params.input[0].text).targets.map(t=>t.id));
+ for(const g of saved)assert.ok(!targetIDs.includes(g.id),'saved target regenerated after resume');
+ const later=new Set(allEvents.filter(e=>e.method==='turn/start'&&!firstPids.has(e.pid)).map(e=>e.pid));
+ assert.equal(later.size,1,'resume restarted Codex between batches');
+ const beforeReuse=(await trace()).length;
+ const reuse=await page.evaluate(async({base,revision})=>(await fetch('/api'+base+'/reading/translate-batches',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scope:'paper',revision,model:'fixture-model'})})).text(),{base,revision:final.revision});
+ assert.ok(reuse.includes('"total":0'));assert.equal((await trace()).length,beforeReuse,'completed paper called model again');
+ const group=final.groups.find(g=>g.translation&&g.regions.length>1);
+ assert.ok(group);
+ await page.locator('[data-card="'+group.id+'"] .translation-text').click({position:{x:12,y:12}});
+ await page.locator('.source-focus[data-group="'+group.id+'"]').first().waitFor();
+ assert.equal(await page.locator('.region-label').count(),0);
+ assert.equal(await page.getByRole('navigation',{name:'对应原文'}).getByRole('button',{name:/查看第 .* 处原文/}).count(),group.regions.length);
+ await page.screenshot({path:join(output,'continuous-translation.png')});
+ // Page jumps, backward/forward, branch invalidation, and bottom placement.
+ const go=async n=>{const input=page.getByRole('textbox',{name:'页码'});await input.fill(String(n));await input.press('Enter');await waitUntil(async()=>Number(await input.inputValue())===n,'page jump')};
+ await go(5);await go(9);
+ const nav=page.getByRole('navigation',{name:'原文阅读历史'});
+ const bounds=await nav.boundingBox(),pdf=await page.getByLabel('连续滚动 PDF 原文').boundingBox();
+ assert.ok(bounds.y>pdf.y+pdf.height*.7&&bounds.x>=pdf.x&&bounds.x+bounds.width<=pdf.x+pdf.width,'history not floating at original bottom');
+ await nav.getByRole('button',{name:'返回阅读位置'}).click();
+ assert.equal(await page.getByRole('textbox',{name:'页码'}).inputValue(),'5');
+ await nav.getByRole('button',{name:'前进阅读位置'}).click();
+ assert.equal(await page.getByRole('textbox',{name:'页码'}).inputValue(),'9');
+ await nav.getByRole('button',{name:'返回阅读位置'}).click();await go(7);
+ assert.ok(await nav.getByRole('button',{name:'前进阅读位置'}).isDisabled());
+ await page.getByRole('button',{name:'译文排版',exact:true}).click();
+ await page.getByLabel('译文字号',{exact:true}).fill('22');await page.getByLabel('译文段间距',{exact:true}).fill('1.5');
+ await page.getByRole('button',{name:'完成',exact:true}).click();
+ const type=await page.locator('.translation-article').evaluate(el=>({size:getComputedStyle(el).fontSize,gap:getComputedStyle(el.querySelector('.article-block')).marginBottom}));
+ assert.equal(type.size,'22px');assert.equal(type.gap,'33px');
+ await page.getByRole('button',{name:'翻译准备',exact:true}).click();
+ assert.ok(await page.locator('.source-region').count()>0);
+ await page.getByRole('button',{name:'完成准备 · 返回阅读',exact:true}).click();
+ assert.equal(await page.locator('.source-region').count(),0);
+ await page.screenshot({path:join(output,'floating-history.png')});
+ await app.close();app=null;
+ await launch();
+ if(await page.getByRole('button',{name:'阅读',exact:true}).count())await page.getByRole('button',{name:'阅读',exact:true}).click();else await page.getByRole('button',{name:'打开论文',exact:true}).click();
+ await page.locator('.translation-article').waitFor();
+ assert.equal(await page.locator('.source-region').count(),0,'reopen restored preparation after translation');
+ assert.equal(await page.locator('.translation-article').evaluate(el=>getComputedStyle(el).fontSize),'22px');
+ assert.equal((await call(base+'/reading')).groups.filter(g=>g.translation).length,final.groups.filter(g=>g.translation).length);
+ assert.deepEqual(errors,[]);
+ await writeFile(join(output,'summary.json'),JSON.stringify({root,passed:true,targets:before,partial:saved.length,batches:allEvents.filter(e=>e.method==='turn/start').length,sessions:new Set(allEvents.filter(e=>e.method==='turn/start').map(e=>e.pid)).size,errors},null,2));
+ console.log(JSON.stringify({passed:true,targets:before,partial:saved.length,output}));
+}catch(error){console.error(error);if(page)await page.screenshot({path:join(output,'failure.png')}).catch(()=>{});process.exitCode=1}
+finally{if(app)await app.close()}

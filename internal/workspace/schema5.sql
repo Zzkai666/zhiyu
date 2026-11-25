@@ -1,0 +1,2 @@
+ALTER TABLE marks ADD COLUMN comment TEXT NOT NULL DEFAULT '';
+PRAGMA user_version=5;

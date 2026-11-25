@@ -1,0 +1,20 @@
+{
+  "tool": "built-in image_gen",
+  "approved": "B from zhiyu-v4-anime",
+  "productName": "知屿",
+  "romanization": "Zhiyu",
+  "mascotName": "阿知",
+  "reference": "assets/branding/zhiyu-v4-anime/zhiyu-anime-B.png",
+  "assets": [
+    {
+      "id": "icon",
+      "prompt": "Use case: precise-object-edit / logo-brand. Edit/extract from the provided approved original character sheet. The user selected THIS character B, so preserve her exact identity: smoky lilac fluffy hair, short side ponytail with dark plum ribbon, amber-gold eyes, small cream bookmark-shaped hair clip, ivory high-neck blouse, broad-sleeved dark plum cardigan, softly rounded anime chibi face.\nCreate ONE final square APPLICATION ICON of the portrait in the UPPER RIGHT of the reference sheet. Match that approved portrait closely: cheek resting on one hand, gentle small confident smile, half-lidded amber eyes, hair framing the face, paper clip visible at left and ponytail/ribbon visible at right. Crop head and shoulders; the large face and hairstyle occupy most of the frame. Simplify only minute knit/strand detail for small-size readability; do not redesign the face, hair, clothes, colors, expression or anatomy. Preserve the professional polished anime line art and luminous restrained cel shading.\nThe entire image is an opaque square of soft rich muted lavender-purple, FULL BLEED to all four edges, with NO rounded outer container or external margin. No white sheet background. No transparency. Subject has about 7% safe margin so hair and ribbon are not clipped. No other character views, no text, no logos, no tiny decorative symbols. This must be a production avatar icon, not a concept sheet. Square format, high resolution.",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-dbe0b7c0-3d67-477f-b967-44f9d25eae32.png"
+    },
+    {
+      "id": "mascot",
+      "prompt": "Use case: precise-object-edit / background-extraction. Use the approved original character sheet as the edit target. Extract ONLY the large FULL-BODY seated character on the LEFT of the sheet, including her simple purple floor cushion. Preserve her exact smoky lilac hairstyle, amber eyes, dark-plum ribbon side ponytail, cream bookmark hair clip, dark plum oversized cardigan, ivory high-neck blouse, lilac long skirt, ivory socks, plum shoes, ivory notebook held to chest, small waving hand, seated pose and all important design details. Keep the SAME character proportions, face, outfit and anime illustration style.\nRemove every portrait, expression study and all the white sheet background. The result should be a single complete character and cushion on a genuinely TRANSPARENT background, full character visible including cowlick, waving fingers, shoes and cushion, with comfortable clear padding. No new scenery, floor, ground plane, text, logo, shadows spreading outside the character/cushion. Do not redraw into a different character. Preserve clean anti-aliased edges and internal colors; no white matte halo. Portrait canvas.",
+      "source": "C:\\Users\\15247\\.codex\\generated_images\\01a1c494-bef2-7603-afcd-cb31c977caba\\exec-d703f072-f71f-4669-b8b8-76271f2322f4.png"
+    }
+  ]
+}
